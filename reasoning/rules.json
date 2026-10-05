@@ -1,0 +1,65 @@
+{
+  "version": "1.0",
+  "protected": [
+    {
+      "id": "R001",
+      "if": "candidate_fact_missing",
+      "then": "do_not_invent"
+    },
+    {
+      "id": "R002",
+      "if": "claim_strength_exceeds_evidence",
+      "then": "narrow_or_omit"
+    },
+    {
+      "id": "R003",
+      "if": "team_outcome_and_ownership_unclear",
+      "then": "use_bounded_attribution"
+    },
+    {
+      "id": "R004",
+      "if": "metric_unverified",
+      "then": "do_not_quantify"
+    },
+    {
+      "id": "R005",
+      "if": "hard_role_constraint_unmet",
+      "then": "flag_gap_not_hide"
+    },
+    {
+      "id": "R006",
+      "if": "target_role_unknown",
+      "then": "disable_strong_tailoring_claims"
+    },
+    {
+      "id": "R007",
+      "if": "ats_system_unknown",
+      "then": "use_general_parseability_not_score_claims"
+    },
+    {
+      "id": "R008",
+      "if": "sensitive_attribute_irrelevant",
+      "then": "exclude_by_default"
+    },
+    {
+      "id": "R009",
+      "if": "evidence_conflicts",
+      "then": "preserve_conflict_until_resolved"
+    },
+    {
+      "id": "R010",
+      "if": "visual_choice_harms_text_extraction",
+      "then": "prefer_parseable_representation"
+    }
+  ],
+  "priorities": [
+    "factual_fidelity",
+    "constraints",
+    "claim_calibration",
+    "role_relevance",
+    "clarity",
+    "machine_compatibility",
+    "persuasion",
+    "aesthetics"
+  ]
+}
