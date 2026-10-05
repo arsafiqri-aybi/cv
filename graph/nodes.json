@@ -1,0 +1,622 @@
+{
+  "version": "1.0",
+  "count": 77,
+  "nodes": [
+    {
+      "id": "A01",
+      "region": "Role",
+      "name": "work_activity",
+      "definition": "Observable category of work performed in the target role.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "A02",
+      "region": "Role",
+      "name": "task",
+      "definition": "A bounded unit of work with an intended result.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "A03",
+      "region": "Role",
+      "name": "work_output",
+      "definition": "A deliverable or state produced by work.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "A04",
+      "region": "Role",
+      "name": "ksao",
+      "definition": "Knowledge, skill, ability, or other attribute relevant to work.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "A05",
+      "region": "Role",
+      "name": "work_context",
+      "definition": "Environmental, organizational, social, or technological conditions of work.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "A06",
+      "region": "Role",
+      "name": "requirement_importance",
+      "definition": "Relative importance of a requirement to successful role performance.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "A07",
+      "region": "Role",
+      "name": "minimum_constraint",
+      "definition": "A hard eligibility or feasibility constraint.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "A08",
+      "region": "Role",
+      "name": "seniority_level",
+      "definition": "Expected complexity, autonomy, scope, and responsibility level.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "B01",
+      "region": "Candidate",
+      "name": "experience_episode",
+      "definition": "A bounded period of work, project, education, or other relevant activity.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "B02",
+      "region": "Candidate",
+      "name": "candidate_task",
+      "definition": "A task the candidate reports having performed.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "B03",
+      "region": "Candidate",
+      "name": "contribution",
+      "definition": "The candidate's specific contribution distinct from team output.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "B04",
+      "region": "Candidate",
+      "name": "output",
+      "definition": "A deliverable or observable result produced.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "B05",
+      "region": "Candidate",
+      "name": "outcome",
+      "definition": "A consequence associated with the contribution or output.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "B06",
+      "region": "Candidate",
+      "name": "scope",
+      "definition": "Scale, breadth, volume, complexity, or reach of the work.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "B07",
+      "region": "Candidate",
+      "name": "tool_domain_exposure",
+      "definition": "Experience with a tool, technology, method, or domain.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "B08",
+      "region": "Candidate",
+      "name": "credential",
+      "definition": "A degree, certification, license, award, or other formal signal.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "C01",
+      "region": "Evidence",
+      "name": "fact",
+      "definition": "A candidate-relevant statement treated as factual within the evidence record.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "C02",
+      "region": "Evidence",
+      "name": "claim",
+      "definition": "A proposition the CV may communicate about the candidate.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "C03",
+      "region": "Evidence",
+      "name": "provenance",
+      "definition": "The origin or support source for a fact or claim.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "C04",
+      "region": "Evidence",
+      "name": "verifiability",
+      "definition": "How readily a material fact or claim can be checked.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "C05",
+      "region": "Evidence",
+      "name": "specificity",
+      "definition": "Degree to which the evidence is concrete rather than vague.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "C06",
+      "region": "Evidence",
+      "name": "uncertainty",
+      "definition": "Material uncertainty attached to a fact, claim, or interpretation.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "C07",
+      "region": "Evidence",
+      "name": "evidence_strength",
+      "definition": "Support quality for the claim being made.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "C08",
+      "region": "Evidence",
+      "name": "claim_calibration",
+      "definition": "Degree to which wording strength matches available evidence.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "D01",
+      "region": "Signal",
+      "name": "signal",
+      "definition": "Candidate information made salient to a receiver under uncertainty.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "D02",
+      "region": "Signal",
+      "name": "diagnosticity",
+      "definition": "How much a signal helps distinguish relevant candidate states.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "D03",
+      "region": "Signal",
+      "name": "credibility",
+      "definition": "How believable a signal appears to the receiver.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "D04",
+      "region": "Signal",
+      "name": "distinctiveness",
+      "definition": "How much a signal differentiates the candidate from alternatives.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "D05",
+      "region": "Signal",
+      "name": "self_presentation",
+      "definition": "Strategic presentation of truthful candidate information.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "D06",
+      "region": "Signal",
+      "name": "inflation_risk",
+      "definition": "Risk that presentation exceeds or distorts underlying evidence.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "E01",
+      "region": "Relevance",
+      "name": "requirement_match",
+      "definition": "Match between a target requirement and candidate evidence.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "E02",
+      "region": "Relevance",
+      "name": "transferability",
+      "definition": "Plausibility that evidence from one context applies to the target context.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "E03",
+      "region": "Relevance",
+      "name": "semantic_alignment",
+      "definition": "Alignment between candidate evidence and target-role terminology/meaning.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "E04",
+      "region": "Relevance",
+      "name": "perceived_pj_fit",
+      "definition": "Human perception that candidate characteristics fit job demands.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "E05",
+      "region": "Relevance",
+      "name": "perceived_po_fit",
+      "definition": "Human perception of candidate–organization fit.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "E06",
+      "region": "Relevance",
+      "name": "relevance_weight",
+      "definition": "Priority assigned to evidence for the current target role.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "F01",
+      "region": "Document",
+      "name": "section_architecture",
+      "definition": "Selection and arrangement of major CV sections.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "F02",
+      "region": "Document",
+      "name": "information_hierarchy",
+      "definition": "Ordering and emphasis that determine what is noticed first.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "F03",
+      "region": "Document",
+      "name": "bullet_structure",
+      "definition": "Micro-structure used to encode experience/evidence statements.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "F04",
+      "region": "Document",
+      "name": "clarity",
+      "definition": "Ease with which intended meaning can be understood.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "F05",
+      "region": "Document",
+      "name": "information_density",
+      "definition": "Amount of useful information per unit of document space.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "F06",
+      "region": "Document",
+      "name": "terminology",
+      "definition": "Role-relevant lexical choices used to express evidence.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "F07",
+      "region": "Document",
+      "name": "tailoring",
+      "definition": "Truthful adaptation of evidence selection and wording to a target role.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "F08",
+      "region": "Document",
+      "name": "visual_hierarchy",
+      "definition": "Typography, spacing, alignment, and grouping that guide reading.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "F09",
+      "region": "Document",
+      "name": "export_integrity",
+      "definition": "Preservation of readable and parseable structure in the final file.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "G01",
+      "region": "Human",
+      "name": "attention",
+      "definition": "Allocation of reviewer visual/cognitive attention.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "G02",
+      "region": "Human",
+      "name": "inference",
+      "definition": "Reviewer interpretation from observed CV information.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "G03",
+      "region": "Human",
+      "name": "perceived_credibility",
+      "definition": "Reviewer judgment that information is believable.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "G04",
+      "region": "Human",
+      "name": "perceived_competence",
+      "definition": "Reviewer judgment of candidate capability.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "G05",
+      "region": "Human",
+      "name": "cognitive_load",
+      "definition": "Mental effort required to process the document.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "G06",
+      "region": "Human",
+      "name": "heuristic_judgment",
+      "definition": "Use of simplified cues or rules in screening.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "G07",
+      "region": "Human",
+      "name": "stereotype_bias",
+      "definition": "Influence of demographic/social stereotypes on judgment.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "G08",
+      "region": "Human",
+      "name": "shortlist_decision",
+      "definition": "Human decision to advance or reject at a screening stage.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "H01",
+      "region": "Machine",
+      "name": "parsing",
+      "definition": "Extraction of text/structure from the document.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "H02",
+      "region": "Machine",
+      "name": "section_detection",
+      "definition": "Identification of CV sections and their boundaries.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "H03",
+      "region": "Machine",
+      "name": "entity_extraction",
+      "definition": "Extraction of entities such as employers, roles, dates, education, and skills.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "H04",
+      "region": "Machine",
+      "name": "normalization",
+      "definition": "Mapping variant terms to normalized entities or taxonomies.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "H05",
+      "region": "Machine",
+      "name": "lexical_retrieval",
+      "definition": "Retrieval or matching based mainly on tokens/terms.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "H06",
+      "region": "Machine",
+      "name": "semantic_retrieval",
+      "definition": "Retrieval or matching based on learned semantic representations.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "H07",
+      "region": "Machine",
+      "name": "ranking",
+      "definition": "Ordering candidates/documents according to a scoring or recommendation function.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "H08",
+      "region": "Machine",
+      "name": "knockout_rule",
+      "definition": "Deterministic rule that blocks or passes an application.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "H09",
+      "region": "Machine",
+      "name": "llm_evaluation",
+      "definition": "LLM-mediated summarization, comparison, or judgment of applications.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "H10",
+      "region": "Machine",
+      "name": "algorithmic_bias",
+      "definition": "Systematic differential effects arising from data/model/process design.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "I01",
+      "region": "Outcome",
+      "name": "parse_success",
+      "definition": "Whether required document information is successfully extracted.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "I02",
+      "region": "Outcome",
+      "name": "recruiter_review",
+      "definition": "Whether the application receives meaningful human review.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "I03",
+      "region": "Outcome",
+      "name": "interview_invitation",
+      "definition": "Whether the candidate is invited to interview.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "I04",
+      "region": "Outcome",
+      "name": "offer",
+      "definition": "Whether the candidate receives an employment offer.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "I05",
+      "region": "Outcome",
+      "name": "job_performance",
+      "definition": "Posthire performance criterion.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "I06",
+      "region": "Outcome",
+      "name": "turnover",
+      "definition": "Posthire retention/separation criterion.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "X01",
+      "region": "Cross",
+      "name": "validity",
+      "definition": "Degree to which an inference or method supports its intended interpretation/use.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "X02",
+      "region": "Cross",
+      "name": "reliability",
+      "definition": "Consistency of measurement or judgment.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "X03",
+      "region": "Cross",
+      "name": "fairness",
+      "definition": "Normative/measurement property concerning equitable treatment and outcomes.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "X04",
+      "region": "Cross",
+      "name": "discrimination_risk",
+      "definition": "Risk of differential treatment based on irrelevant or protected characteristics.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "X05",
+      "region": "Cross",
+      "name": "privacy",
+      "definition": "Control and appropriateness of candidate information exposure.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "X06",
+      "region": "Cross",
+      "name": "source_freshness",
+      "definition": "Recency and continued applicability of an external source.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "X07",
+      "region": "Cross",
+      "name": "context_boundary",
+      "definition": "Conditions under which a finding or rule is expected to hold.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    },
+    {
+      "id": "X08",
+      "region": "Cross",
+      "name": "causal_identification",
+      "definition": "Strength of evidence for a causal rather than associational claim.",
+      "status": "accepted_v1",
+      "scientific_claim": false
+    }
+  ]
+}

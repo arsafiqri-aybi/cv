@@ -1,0 +1,90 @@
+{
+  "version": "1.0",
+  "count": 12,
+  "non_edges": [
+    {
+      "source": "I03",
+      "target": "I05",
+      "type": "non_edge",
+      "rationale": "Interview success is not equivalent to job-performance validity.",
+      "status": "protected_v1"
+    },
+    {
+      "source": "F04",
+      "target": "I05",
+      "type": "non_edge",
+      "rationale": "Writing clarity is not itself evidence of future job performance.",
+      "status": "protected_v1"
+    },
+    {
+      "source": "B01",
+      "target": "I05",
+      "type": "non_edge",
+      "rationale": "Experience duration/episode presence is not equivalent to competence or performance.",
+      "status": "protected_v1"
+    },
+    {
+      "source": "E04",
+      "target": "E01",
+      "type": "non_edge",
+      "rationale": "Perceived person–job fit is not identical to objective/evidence-supported requirement match.",
+      "status": "protected_v1"
+    },
+    {
+      "source": "H01",
+      "target": "H07",
+      "type": "non_edge",
+      "rationale": "Successful parsing does not imply favorable ranking.",
+      "status": "protected_v1"
+    },
+    {
+      "source": "E03",
+      "target": "B07",
+      "type": "non_edge",
+      "rationale": "Keyword/semantic alignment is not equivalent to underlying competence.",
+      "status": "protected_v1"
+    },
+    {
+      "source": "B05",
+      "target": "C07",
+      "type": "non_edge",
+      "rationale": "A quantified outcome is not automatically strong evidence without provenance and attribution.",
+      "status": "protected_v1"
+    },
+    {
+      "source": "F08",
+      "target": "I03",
+      "type": "non_edge",
+      "rationale": "Visual polish is not universally proven to cause interview success.",
+      "status": "protected_v1"
+    },
+    {
+      "source": "A07",
+      "target": "A06",
+      "type": "non_edge",
+      "rationale": "A minimum qualification is not automatically the most important predictor of successful work.",
+      "status": "protected_v1"
+    },
+    {
+      "source": "D04",
+      "target": "D02",
+      "type": "non_edge",
+      "rationale": "Distinctiveness is not equivalent to diagnosticity.",
+      "status": "protected_v1"
+    },
+    {
+      "source": "D03",
+      "target": "C07",
+      "type": "non_edge",
+      "rationale": "Perceived credibility is not equivalent to actual evidence strength.",
+      "status": "protected_v1"
+    },
+    {
+      "source": "H09",
+      "target": "G02",
+      "type": "non_edge",
+      "rationale": "LLM evaluation is not equivalent to human recruiter inference.",
+      "status": "protected_v1"
+    }
+  ]
+}

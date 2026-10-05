@@ -1,0 +1,496 @@
+{
+  "version": "1.0",
+  "count": 70,
+  "edges": [
+    {
+      "source": "A02",
+      "target": "A04",
+      "type": "requires",
+      "rationale": "Tasks can imply relevant KSAOs.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "A02",
+      "target": "A03",
+      "type": "produces",
+      "rationale": "Tasks are performed to produce work outputs.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "A05",
+      "target": "A06",
+      "type": "moderates",
+      "rationale": "Work context can change requirement importance.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "A08",
+      "target": "A06",
+      "type": "moderates",
+      "rationale": "Seniority changes the importance/threshold of requirements.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "A07",
+      "target": "E01",
+      "type": "constrains",
+      "rationale": "Minimum constraints restrict acceptable matches.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "B01",
+      "target": "B02",
+      "type": "contains",
+      "rationale": "Experience episodes contain candidate tasks.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "B02",
+      "target": "B03",
+      "type": "supports",
+      "rationale": "Candidate tasks support contribution claims.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "B03",
+      "target": "B04",
+      "type": "produces",
+      "rationale": "Contributions can produce outputs.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "B04",
+      "target": "B05",
+      "type": "associated_with",
+      "rationale": "Outputs may be associated with outcomes.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "B03",
+      "target": "B06",
+      "type": "scoped_by",
+      "rationale": "Contribution strength is interpreted with scope.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "B07",
+      "target": "E01",
+      "type": "supports",
+      "rationale": "Tool/domain exposure can support requirement match.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "B08",
+      "target": "D01",
+      "type": "instantiates",
+      "rationale": "Credentials can function as signals.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "C01",
+      "target": "C02",
+      "type": "supports",
+      "rationale": "Facts support candidate claims.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "C03",
+      "target": "C07",
+      "type": "supports",
+      "rationale": "Provenance can strengthen evidence quality.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "C04",
+      "target": "D03",
+      "type": "supports",
+      "rationale": "Verifiability can strengthen perceived credibility.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "C05",
+      "target": "C07",
+      "type": "supports",
+      "rationale": "Specificity can improve evidence strength when relevant.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "C06",
+      "target": "C08",
+      "type": "constrains",
+      "rationale": "Uncertainty limits claim strength.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "C07",
+      "target": "C08",
+      "type": "constrains",
+      "rationale": "Claim strength should not exceed evidence strength.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "C08",
+      "target": "D06",
+      "type": "reduces",
+      "rationale": "Calibration reduces inflation risk.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "D01",
+      "target": "D02",
+      "type": "evaluated_by",
+      "rationale": "Signals can be evaluated for diagnosticity.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "D01",
+      "target": "D03",
+      "type": "evaluated_by",
+      "rationale": "Signals can be evaluated for credibility.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "D04",
+      "target": "G01",
+      "type": "influences",
+      "rationale": "Distinctive signals may affect attention.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "D05",
+      "target": "G02",
+      "type": "influences",
+      "rationale": "Self-presentation can affect reviewer inference.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "D06",
+      "target": "G03",
+      "type": "threatens",
+      "rationale": "Inflation risk can reduce perceived credibility.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "E01",
+      "target": "E06",
+      "type": "supports",
+      "rationale": "Requirement match increases evidence priority.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "E02",
+      "target": "E06",
+      "type": "supports",
+      "rationale": "Transferability affects target-role priority.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "E03",
+      "target": "H05",
+      "type": "supports",
+      "rationale": "Terminology alignment can support lexical retrieval.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "E03",
+      "target": "H06",
+      "type": "supports",
+      "rationale": "Semantic alignment can support semantic retrieval.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "E01",
+      "target": "E04",
+      "type": "influences",
+      "rationale": "Evidence-supported match can influence perceived P–J fit.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "E06",
+      "target": "F02",
+      "type": "drives",
+      "rationale": "Relevance weight should drive information priority.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "F01",
+      "target": "G01",
+      "type": "influences",
+      "rationale": "Section architecture shapes attention.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "F02",
+      "target": "G01",
+      "type": "influences",
+      "rationale": "Information hierarchy shapes attention.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "F04",
+      "target": "G05",
+      "type": "reduces",
+      "rationale": "Clarity can reduce cognitive load.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "F05",
+      "target": "G05",
+      "type": "moderates",
+      "rationale": "Excessive density can raise cognitive load.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "F06",
+      "target": "E03",
+      "type": "implements",
+      "rationale": "Terminology is one way semantic alignment is expressed.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "F07",
+      "target": "E06",
+      "type": "implements",
+      "rationale": "Tailoring operationalizes relevance-weighted evidence selection.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "F08",
+      "target": "G01",
+      "type": "influences",
+      "rationale": "Visual hierarchy directs human attention.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "F09",
+      "target": "H01",
+      "type": "constrains",
+      "rationale": "Export integrity affects machine parsing.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "G01",
+      "target": "G02",
+      "type": "precedes",
+      "rationale": "Attention precedes many reviewer inferences.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "G02",
+      "target": "G04",
+      "type": "supports",
+      "rationale": "Reviewer inference contributes to perceived competence.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "G02",
+      "target": "E04",
+      "type": "supports",
+      "rationale": "Reviewer inference contributes to perceived P–J fit.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "G03",
+      "target": "G08",
+      "type": "influences",
+      "rationale": "Perceived credibility can affect shortlisting.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "G04",
+      "target": "G08",
+      "type": "influences",
+      "rationale": "Perceived competence can affect shortlisting.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "G05",
+      "target": "G06",
+      "type": "influences",
+      "rationale": "High cognitive load can increase heuristic judgment.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "G07",
+      "target": "G08",
+      "type": "biases",
+      "rationale": "Stereotypes can bias shortlisting decisions.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "H01",
+      "target": "H02",
+      "type": "enables",
+      "rationale": "Parsing enables section detection.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "H01",
+      "target": "H03",
+      "type": "enables",
+      "rationale": "Parsing enables entity extraction.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "H03",
+      "target": "H04",
+      "type": "feeds",
+      "rationale": "Extracted entities can be normalized.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "H04",
+      "target": "H05",
+      "type": "supports",
+      "rationale": "Normalization can support lexical retrieval.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "H04",
+      "target": "H06",
+      "type": "supports",
+      "rationale": "Normalization can support semantic retrieval.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "H05",
+      "target": "H07",
+      "type": "feeds",
+      "rationale": "Lexical retrieval may feed ranking.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "H06",
+      "target": "H07",
+      "type": "feeds",
+      "rationale": "Semantic retrieval may feed ranking.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "H08",
+      "target": "I02",
+      "type": "constrains",
+      "rationale": "Knockout rules can prevent human review.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "H07",
+      "target": "I02",
+      "type": "influences",
+      "rationale": "Ranking can affect probability of human review.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "H09",
+      "target": "H07",
+      "type": "may_influence",
+      "rationale": "LLM evaluation may feed candidate ranking/recommendation.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "H10",
+      "target": "I02",
+      "type": "biases",
+      "rationale": "Algorithmic bias can affect review exposure.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "G08",
+      "target": "I03",
+      "type": "influences",
+      "rationale": "Shortlisting typically precedes interview invitation.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "I03",
+      "target": "I04",
+      "type": "precedes",
+      "rationale": "Interview invitation can precede an offer.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "I03",
+      "target": "I05",
+      "type": "not_equivalent",
+      "rationale": "Interview invitation is not job performance.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "I02",
+      "target": "I05",
+      "type": "not_equivalent",
+      "rationale": "Human review is not job performance.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "X01",
+      "target": "I05",
+      "type": "evaluates_against",
+      "rationale": "Criterion validity may be evaluated against job performance.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "X02",
+      "target": "G02",
+      "type": "evaluates",
+      "rationale": "Reliability can evaluate reviewer inference consistency.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "X03",
+      "target": "G08",
+      "type": "constrains",
+      "rationale": "Fairness constrains acceptable screening practice.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "X03",
+      "target": "H07",
+      "type": "constrains",
+      "rationale": "Fairness constrains algorithmic ranking.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "X04",
+      "target": "G07",
+      "type": "related_to",
+      "rationale": "Stereotype bias contributes to discrimination risk.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "X04",
+      "target": "H10",
+      "type": "related_to",
+      "rationale": "Algorithmic bias contributes to discrimination risk.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "X05",
+      "target": "B01",
+      "type": "constrains",
+      "rationale": "Privacy constrains candidate data collection/exposure.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "X06",
+      "target": "H09",
+      "type": "constrains",
+      "rationale": "Freshness matters strongly for rapidly changing AI systems.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "X07",
+      "target": "C08",
+      "type": "constrains",
+      "rationale": "Context boundaries constrain claim generalization.",
+      "status": "accepted_v1"
+    },
+    {
+      "source": "X08",
+      "target": "C08",
+      "type": "constrains",
+      "rationale": "Causal wording requires adequate causal evidence.",
+      "status": "accepted_v1"
+    }
+  ]
+}
