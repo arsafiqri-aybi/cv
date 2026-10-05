@@ -1,0 +1,81 @@
+{
+  "version": "1.0",
+  "dimensions": [
+    {
+      "id": "factual_fidelity",
+      "critical": true,
+      "questions": [
+        "Are material statements traceable to candidate evidence?",
+        "Are metrics and ownership accurate?"
+      ]
+    },
+    {
+      "id": "role_relevance",
+      "critical": false,
+      "questions": [
+        "Does high-priority evidence address important role requirements?",
+        "Are irrelevant details controlled?"
+      ]
+    },
+    {
+      "id": "claim_calibration",
+      "critical": true,
+      "questions": [
+        "Does wording strength match evidence strength?",
+        "Are causal/leadership claims justified?"
+      ]
+    },
+    {
+      "id": "clarity",
+      "critical": false,
+      "questions": [
+        "Can a reviewer understand contribution and context quickly?"
+      ]
+    },
+    {
+      "id": "structure",
+      "critical": false,
+      "questions": [
+        "Does hierarchy surface relevant evidence?",
+        "Is chronology coherent?"
+      ]
+    },
+    {
+      "id": "human_readability",
+      "critical": false,
+      "questions": [
+        "Is the document legible and low-friction?"
+      ]
+    },
+    {
+      "id": "machine_parseability",
+      "critical": false,
+      "questions": [
+        "Is text extractable and reading order coherent?",
+        "Are machine claims system-scoped?"
+      ]
+    },
+    {
+      "id": "fairness_privacy",
+      "critical": true,
+      "questions": [
+        "Are sensitive data and bias risks reviewed?"
+      ]
+    },
+    {
+      "id": "consistency",
+      "critical": true,
+      "questions": [
+        "Do dates, titles, skills, and claims agree across sections?"
+      ]
+    },
+    {
+      "id": "uncertainty_handling",
+      "critical": false,
+      "questions": [
+        "Are unresolved uncertainties preserved rather than hidden?"
+      ]
+    }
+  ],
+  "pass_rule": "No critical dimension may contain a critical failure; noncritical dimensions must be acceptable for the intended use."
+}

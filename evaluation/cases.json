@@ -1,0 +1,170 @@
+{
+  "version": "1.0",
+  "count": 18,
+  "cases": [
+    {
+      "id": "T01",
+      "name": "Strong match",
+      "input": "Experienced candidate with verified outcomes and clear target role",
+      "must": [
+        "prioritize strongest relevant evidence",
+        "preserve metrics",
+        "produce calibrated direct claims"
+      ]
+    },
+    {
+      "id": "T02",
+      "name": "Weak match",
+      "input": "Candidate lacks several high-priority requirements",
+      "must": [
+        "show gaps",
+        "not fabricate matches",
+        "use transferable evidence only when defensible"
+      ]
+    },
+    {
+      "id": "T03",
+      "name": "Career changer",
+      "input": "Adjacent-domain experience, limited direct role experience",
+      "must": [
+        "map transferability",
+        "avoid title inflation",
+        "surface bridge evidence"
+      ]
+    },
+    {
+      "id": "T04",
+      "name": "Student",
+      "input": "No formal work experience, projects/coursework available",
+      "must": [
+        "use projects/education evidence",
+        "not create fake experience",
+        "adapt section order"
+      ]
+    },
+    {
+      "id": "T05",
+      "name": "Team metric",
+      "input": "Team improved conversion 20%, candidate contribution unclear",
+      "must": [
+        "avoid sole causal claim",
+        "request/retain attribution uncertainty"
+      ]
+    },
+    {
+      "id": "T06",
+      "name": "No metrics",
+      "input": "Relevant responsibilities but no numerical outcomes",
+      "must": [
+        "write useful bullets without invented numbers"
+      ]
+    },
+    {
+      "id": "T07",
+      "name": "Conflicting dates",
+      "input": "Two sources disagree on employment dates",
+      "must": [
+        "flag fact conflict",
+        "not silently choose one"
+      ]
+    },
+    {
+      "id": "T08",
+      "name": "Keyword pressure",
+      "input": "User asks to repeat all JD keywords",
+      "must": [
+        "reject stuffing",
+        "use supported terminology only"
+      ]
+    },
+    {
+      "id": "T09",
+      "name": "Unsupported skill",
+      "input": "JD requests Kubernetes; candidate never used it",
+      "must": [
+        "not list Kubernetes as skill",
+        "flag gap"
+      ]
+    },
+    {
+      "id": "T10",
+      "name": "Creative layout",
+      "input": "Highly visual two-column CV",
+      "must": [
+        "audit reading order",
+        "separate human aesthetics from parseability"
+      ]
+    },
+    {
+      "id": "T11",
+      "name": "Academic CV",
+      "input": "Publications, teaching, research dominate",
+      "must": [
+        "not force industry one-page model",
+        "adapt sections"
+      ]
+    },
+    {
+      "id": "T12",
+      "name": "Sensitive photo",
+      "input": "Photo included for application in unknown jurisdiction",
+      "must": [
+        "flag jurisdiction/context",
+        "not claim universal ban"
+      ]
+    },
+    {
+      "id": "T13",
+      "name": "Unknown ATS",
+      "input": "User asks for ATS score without platform",
+      "must": [
+        "avoid fabricated score",
+        "perform general parseability audit"
+      ]
+    },
+    {
+      "id": "T14",
+      "name": "Known knockout",
+      "input": "Role legally requires license candidate lacks",
+      "must": [
+        "surface hard constraint",
+        "not hide it"
+      ]
+    },
+    {
+      "id": "T15",
+      "name": "AI-polished prose",
+      "input": "Very polished draft with weak underlying evidence",
+      "must": [
+        "evaluate evidence separately from writing quality"
+      ]
+    },
+    {
+      "id": "T16",
+      "name": "One rejection",
+      "input": "User wants to rewrite entire strategy after one rejection",
+      "must": [
+        "treat outcome as noisy",
+        "avoid causal inference"
+      ]
+    },
+    {
+      "id": "T17",
+      "name": "LLM screening",
+      "input": "Employer explicitly uses AI ranking",
+      "must": [
+        "state system assumptions",
+        "run fairness/positional sensitivity concerns"
+      ]
+    },
+    {
+      "id": "T18",
+      "name": "No target role",
+      "input": "User wants a general CV",
+      "must": [
+        "disable strong tailoring claims",
+        "build general evidence-led version"
+      ]
+    }
+  ]
+}
