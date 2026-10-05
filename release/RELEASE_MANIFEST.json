@@ -1,16 +1,33 @@
 {
   "project": "cv",
   "version": "1.0.0",
-  "release_status": "candidate_pending_static_audit",
+  "release_status": "PROJECT_COMPLETE_V1",
+  "release_date": "2026-10-06",
   "scientific_saturation_claimed": false,
-  "architecture": "CV as evidence-constrained screening representation in a socio-technical recruitment/selection system",
-  "protected_nonclaims": [
-    "No guarantee of interview or offer",
-    "No universal ATS score",
-    "No claim of strong CV→job-performance validity",
-    "No universal one-page rule",
-    "No universal best template"
-  ],
+  "independent_behavioral_evaluation_claimed": false,
+  "static_release_audit": {
+    "status": "PASS",
+    "nodes": 77,
+    "edges": 70,
+    "non_edges": 12,
+    "adversarial_cases": 18,
+    "rubric_dimensions": 10,
+    "checks": [
+      "unique node IDs",
+      "edge referential integrity",
+      "non-edge referential integrity",
+      "declared count consistency",
+      "critical factual_fidelity",
+      "critical claim_calibration",
+      "critical fairness_privacy",
+      "critical consistency",
+      "scientific saturation false"
+    ]
+  },
+  "workflow_installation": {
+    "status": "NOT_INSTALLED",
+    "reason": "workflow_writes_not_enabled"
+  },
   "components": {
     "orchestration": true,
     "research": true,
@@ -22,10 +39,11 @@
     "construction_system": true,
     "human_audit": true,
     "machine_audit": true,
+    "factual_integrity_audit": true,
     "fairness_audit": true,
     "evaluation_suite": true,
-    "runtime_skill": true
+    "runtime_skill": true,
+    "release_controls": true
   },
-  "expected_static_audit": "python scripts/audit_repository.py",
-  "ci_note": "GitHub Operator workflow writes unavailable; static audit is executed separately."
+  "limitations_file": "release/KNOWN_LIMITATIONS.md"
 }

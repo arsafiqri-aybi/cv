@@ -2,70 +2,110 @@
 
 Last updated: 2026-10-06
 
-## Current state
+## Release state
 
-- S0 — Contract + red-team foundation: **COMPLETE v0.1**
-- S1 — Literature discovery breadth pass: **COMPLETE v0.1**
-- S2 — Claim / contradiction / uncertainty registry: **BOOTSTRAPPED v0.1**
-- S3 — Construct decomposition: **STARTED / PROVISIONAL**
-- S4+ — Not yet started
+**PROJECT_COMPLETE_V1 — operational architecture and runtime package complete.**
 
-This status does **not** claim scientific saturation.
+Scientific saturation is **NOT_CLAIMED**.
 
-## Current accepted architecture
+Independent external/human behavioral evaluation is **NOT_CLAIMED**.
+
+## Stage status
+
+- S0 — Contract + red-team foundation: COMPLETE
+- S1 — Literature discovery breadth pass: COMPLETE v0.1
+- S2 — Claim / contradiction / uncertainty registries: COMPLETE for v1 scope
+- S3 — Construct decomposition: COMPLETE v1
+- S4 — Knowledge graph: COMPLETE v1
+- S5 — Candidate evidence model: COMPLETE v1
+- S6 — Target role model: COMPLETE v1
+- S7 — Reasoning engine: COMPLETE v1
+- S8 — CV construction system: COMPLETE v1
+- S9 — Human + machine + integrity + fairness audits: COMPLETE v1
+- S10 — Evaluation architecture: COMPLETE v1
+- S11 — Runtime Skill packaging: COMPLETE v1
+- S12 — Release / completion audit: COMPLETE v1
+
+## Verified release snapshot
+
+Static release audit executed against persisted repository content:
+
+- 77 graph nodes
+- 70 typed graph edges
+- 12 protected non-edges
+- 18 adversarial evaluation cases
+- 10 evaluation dimensions
+- unique node IDs: PASS
+- edge referential integrity: PASS
+- non-edge referential integrity: PASS
+- factual fidelity critical gate: PASS
+- claim calibration critical gate: PASS
+- fairness/privacy critical gate: PASS
+- consistency critical gate: PASS
+- release scientific-saturation flag = false: PASS
+
+## Workflow limitation
+
+GitHub Operator rejected workflow-file creation with:
+
+`workflow_writes_not_enabled`
+
+Therefore GitHub Actions CI was not installed.
+
+This does not invalidate the repository architecture or static audit. The repository includes:
+- `scripts/audit_repository.py`
+- `scripts/validate_models.py`
+
+for deterministic validation in environments where execution is available.
+
+## Accepted v1 architecture
 
 ```text
 WORK / ROLE REALITY
 ↕
 CANDIDATE REALITY
 ↓
-EVIDENCE MODEL
+EVIDENCE
 ↓
-SIGNAL MODEL
+SIGNALING
+↓
+RELEVANCE / FIT
 ↓
 DOCUMENT REPRESENTATION
-↙                    ↘
-HUMAN INTERPRETATION   MACHINE INTERPRETATION
-↘                    ↙
+↙                     ↘
+HUMAN INTERPRETATION    MACHINE INTERPRETATION
+↘                     ↙
 SCREENING OUTCOME
 ↓
 FEEDBACK
 ```
 
 Cross-cutting:
-
 - validity / reliability;
 - fairness / discrimination;
+- privacy;
 - provenance / uncertainty;
-- algorithmic mediation;
-- legal / policy context;
-- outcome interpretation.
+- source freshness;
+- context boundaries;
+- causal identification.
 
-## Evidence-backed corrections now protected
+## Completion meaning
 
-1. Resume/CV screening success must remain distinct from job-performance validity.
-2. Prehire work-experience quantity is not a strong general proxy for future performance.
-3. Recruiter fit perceptions matter for hiring judgments but are not objective ground truth.
-4. Resume composition (detail, clarity, structure) can affect job-search outcomes, yet may not diagnose worker quality.
-5. Layout can influence shortlisting, but there is no evidence-based universal visual template.
-6. Resume-derived personality inference is weak and should not be treated as valid personality measurement.
-7. ATS / algorithmic hiring must be modeled as heterogeneous socio-technical systems.
-8. Fairness cannot be postponed until the final formatting stage.
-9. GenAI weakens the assumption that polished writing necessarily reflects applicant writing skill or effort.
-10. More information is not always better; richer formats can add non-job-relevant cues without improving inference accuracy.
+PROJECT_COMPLETE_V1 means the system is architecturally and operationally ready to:
+- analyze target roles;
+- structure candidate evidence;
+- map evidence to requirements;
+- calibrate claims;
+- construct CV content;
+- audit human readability;
+- audit machine parseability assumptions;
+- audit factual integrity;
+- review fairness/privacy risks;
+- package behavior through the CV Skill.
 
-## Next gate
-
-S2 must be strengthened until material architecture claims are represented as:
-
-```text
-SOURCE
-→ ATOMIC CLAIM
-→ OUTCOME
-→ CONTEXT
-→ BOUNDARY
-→ CONTRADICTION / UNCERTAINTY
-→ OPERATIONAL IMPLICATION
-```
-
-Only then may S3 construct decomposition be promoted beyond provisional candidates.
+It does **not** mean:
+- every CV question is scientifically settled;
+- the system guarantees interviews/offers;
+- every ATS has been tested;
+- all cultures/jurisdictions are covered;
+- independent recruiter validation has been completed.

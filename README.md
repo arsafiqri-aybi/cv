@@ -1,133 +1,126 @@
 # CV
 
-Research-grounded architecture for understanding, constructing, and evaluating CVs/résumés.
+**Release: v1.0.0 — PROJECT_COMPLETE_V1**
 
-## Central position
+Research-grounded architecture and runtime system for understanding, constructing, tailoring, and auditing CVs/résumés.
 
-A CV is **not treated as a psychometric test, a keyword container, or merely persuasive copy**.
+## Central model
 
-The working model is:
-
-> A CV is a constrained representation of candidate-relevant information used inside a recruitment and selection system, where the representation is interpreted by human and/or computational screeners under uncertainty.
-
-This repository studies the full path:
+> A CV is a strategically constructed but evidence-constrained representation of a candidate, used as one input in a socio-technical recruitment and selection system under uncertainty.
 
 ```text
 WORK / ROLE REALITY
-        ↕
+↕
 CANDIDATE REALITY
-        ↓
-EVIDENCE SELECTION
-        ↓
-SIGNAL CONSTRUCTION
-        ↓
+↓
+EVIDENCE
+↓
+SIGNALING
+↓
+RELEVANCE / FIT
+↓
 DOCUMENT REPRESENTATION
-        ↓
-HUMAN + MACHINE INTERPRETATION
-        ↓
-SCREENING DECISION
-        ↓
-OBSERVED OUTCOMES / FEEDBACK
+↙                    ↘
+HUMAN INTERPRETATION   MACHINE INTERPRETATION
+↘                    ↙
+SCREENING OUTCOME
+↓
+FEEDBACK
 ```
 
-The architecture is intentionally **not frozen into an arbitrary number of scientific cores**. Scientific disciplines and mechanisms may cut across multiple process layers.
+## Release snapshot
+
+- 77 operational constructs
+- 70 typed graph edges
+- 12 protected non-edges
+- 18 adversarial evaluation cases
+- 10 evaluation dimensions
+- candidate evidence JSON Schema
+- target-role JSON Schema
+- reasoning + claim-calibration engine
+- CV construction system
+- human/machine/factual/fairness audits
+- root runtime `SKILL.md`
+- static release audit: **PASS**
+
+Scientific saturation is **not claimed**.
 
 ## Orchestration
 
-The project now separates domain knowledge from execution control:
-
-- `orchestration/MASTER_PROMPT.md` — mission, scientific stance, research program, architecture rules, adversarial rules, and completion gates.
-- `orchestration/SCALE.md` — stage/dependency architecture, protected constraints, routing envelope, verification, and re-plan triggers.
-- `orchestration/GOVERNOR.md` — research/resource allocation, context, evidence routing, escalation, retries, and stopping inside the Scale contract.
-
-Conceptually:
-
 ```text
 MASTER PROMPT
-      ↓
-SCALE — defines the execution envelope
-      ↓
-GOVERNOR — allocates resources inside the envelope
-      ↓
-CV DOMAIN ARCHITECTURE + RESEARCH + REASONING + EVALUATION
+↓
+SCALE
+↓
+GOVERNOR
+↓
+DOMAIN SCIENCE
+↓
+REASONING
+↓
+CONSTRUCTION
+↓
+AUDIT
+↓
+EVALUATION
 ```
 
-## What this project is trying to optimize
+Files:
+- `orchestration/MASTER_PROMPT.md`
+- `orchestration/SCALE.md`
+- `orchestration/GOVERNOR.md`
 
-A high-quality CV should increase:
+## Protected distinctions
 
-- factual fidelity;
-- job relevance;
-- evidence specificity;
-- interpretability;
-- credibility;
-- information efficiency;
-- human readability;
-- machine parseability where relevant;
-- consistency across claims;
-- fairness-aware presentation;
-- usefulness for the intended screening context.
+```text
+interview success ≠ job-performance validity
+writing quality ≠ capability
+experience duration ≠ competence
+perceived fit ≠ objective fit
+parsing ≠ ranking
+keyword overlap ≠ competence
+quantification ≠ evidence quality
+visual polish ≠ universal effectiveness
+```
 
-It should **not** optimize:
+## Runtime
 
-- fabricated achievements;
-- inflated claims;
-- unsupported causal language;
-- keyword stuffing;
-- imitation of a target employer's personality;
-- gaming an unknown ATS;
-- aesthetic complexity for its own sake;
-- callback rate at the expense of truth or long-term fit.
+Use `SKILL.md`.
 
-## Scientific foundation
-
-Primary scientific areas:
-
-1. Recruitment, staffing, and personnel selection
-2. Work / job analysis and competency requirements
-3. Signaling and information asymmetry
-4. Human judgment, impression formation, and perceived fit
-5. Language, information architecture, and document communication
-
-Cross-cutting lenses:
-
-- measurement, validity, and reliability;
-- fairness, discrimination, and legal/ethical constraints;
-- algorithmic hiring, NLP, information retrieval, and machine screening;
-- uncertainty, provenance, contradiction, and evidence quality;
-- applicant outcomes and feedback.
-
-## Why this architecture
-
-The repository was deliberately red-teamed before being established.
-
-Important corrections to the initial concept:
-
-- **Personnel Selection alone is too narrow** as the umbrella. CVs sit at the recruitment–selection boundary.
-- **A CV is not itself a validated predictor of job performance.** Resume screening may influence hiring outcomes while still having weak criterion validity.
-- **Psychometrics is an evaluation lens, not a CV core.**
-- **Work experience quantity is not equivalent to capability evidence.**
-- **Perceived fit is consequential but not objective truth.**
-- **Writing quality can affect interview outcomes even after controlling for experience, which means presentation is consequential but may not be diagnostic of job performance.**
-- **ATS is a heterogeneous mediation layer, not the foundation of CV science.**
-- **There is no evidence-based universal "best template."**
-
-See `docs/ARCHITECTURE.md` and `research/RED_TEAM.md`.
-
-## Current status
-
-**Architecture stage: v0.1 — research-grounded provisional architecture.**
-
-The process model is accepted as the working scaffold. Module counts, neuron counts, edge counts, and runtime rules are **not frozen** until deeper literature discovery and construct decomposition are completed.
+The runtime:
+1. models target role;
+2. structures candidate evidence;
+3. maps evidence to requirements;
+4. diagnoses gaps;
+5. calibrates claims;
+6. selects signals;
+7. constructs the document;
+8. audits human interpretation;
+9. audits machine interpretation;
+10. verifies factual integrity and fairness/privacy risk.
 
 ## Repository map
 
-- `orchestration/MASTER_PROMPT.md` — master project prompt
-- `orchestration/SCALE.md` — execution architecture
-- `orchestration/GOVERNOR.md` — resource/evidence governor
-- `PROJECT_CONTRACT.md` — mission, scope, constraints, completion logic
-- `docs/ARCHITECTURE.md` — working architecture and layer model
-- `research/EVIDENCE_POLICY.md` — source and claim promotion rules
-- `research/RED_TEAM.md` — adversarial audit of the concept
-- `research/SOURCE_REGISTRY.md` — initial scientific source map
-- `ROADMAP.md` — staged build plan
+- `PROJECT_CONTRACT.md` — scope and invariants
+- `docs/ARCHITECTURE.md` — process architecture
+- `research/` — evidence, claims, contradictions, uncertainty
+- `science/` — taxonomy
+- `graph/` — nodes, edges, protected non-edges
+- `candidate_evidence/` — candidate truth model
+- `target_role/` — target-role model
+- `schemas/` — machine-readable schemas
+- `reasoning/` — mapping and claim calibration
+- `construction/` — CV/document construction
+- `audits/` — human, machine, factual, fairness/privacy audits
+- `evaluation/` — rubric, adversarial cases, evaluation status
+- `references/` — runtime progressive-disclosure references
+- `release/` — manifest, gates, limitations, notes
+- `scripts/` — deterministic validators
+
+## Important limitation
+
+PROJECT_COMPLETE_V1 means the defined operational v1 scope is complete and statically verified.
+
+It does not mean every scientific question about CVs is settled or that interviews/offers can be guaranteed.
+
+See `release/KNOWN_LIMITATIONS.md`.

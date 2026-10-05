@@ -1,267 +1,109 @@
 # Roadmap
 
-## Stage 0 — Architecture red-team
+## v1.0 — PROJECT_COMPLETE
 
-Status: **COMPLETE v0.1**
+All required build stages for the defined v1 scope are complete.
 
-Outputs:
-- process-layer model;
-- umbrella-domain correction;
-- psychometrics reclassified as cross-cutting;
-- ATS reclassified as machine mediation;
-- resume-validity caveat;
-- callback vs performance separation;
-- evidence policy.
+### S0 — Contract + adversarial foundation
+COMPLETE
 
-## Stage 1 — Literature discovery
+### S1 — Literature discovery
+COMPLETE — breadth-first map established.
 
-Status: **BREADTH PASS v0.1 COMPLETE**
-
-Goal:
-Build the research map before forcing module counts.
-
-Research clusters covered in first pass:
-
-1. recruitment + staffing;
-2. personnel selection;
-3. work / role analysis;
-4. résumé screening;
-5. signaling + self-presentation;
-6. person–job / person–organization fit;
-7. recruiter judgment + cognition;
-8. résumé content;
-9. work-experience validity;
-10. biodata;
-11. skills signaling;
-12. writing quality + communication;
-13. information architecture + document design;
-14. résumé aesthetics/layout;
-15. recruiter attention;
-16. personality inference;
-17. machine parsing;
-18. digital selection;
-19. information retrieval + ranking;
-20. algorithmic hiring;
-21. fairness + discrimination;
-22. applicant reactions;
-23. generative AI and résumé signaling;
-24. feedback / application outcomes.
-
-Still under-covered:
-- cross-cultural conventions;
-- occupation-specific moderation;
-- executive/academic CV distinctions;
-- legal regimes;
-- production ATS behavior.
-
-Deliverables:
-- `research/LITERATURE_DISCOVERY_V0_1.md`
-- source-registry supplement;
-- explicit research gaps.
-
-## Stage 2 — Claim / contradiction / uncertainty registry
-
-Status: **BOOTSTRAPPED v0.1**
-
-Created:
-- `research/CLAIM_REGISTRY_V0_1.md`
-- `research/CONTRADICTION_REGISTRY_V0_1.md`
-- `research/UNCERTAINTY_REGISTRY_V0_1.md`
-
-Next:
-- expand source coverage for each material claim;
-- attach outcome + context + boundary metadata;
-- promote/demote claims based on contradiction search.
-
-## Stage 3 — Construct decomposition
-
-Status: **STARTED / PROVISIONAL**
-
-Current artifact:
-- `research/CONSTRUCT_CANDIDATES_V0_1.md`
-
-Do not begin with a target module count.
-
-For each construct:
-
-- canonical definition;
-- neighboring constructs;
-- aliases;
-- non-equivalences;
-- evidence status;
-- outcome relation;
-- context;
-- measurement;
-- failure modes.
-
-Then cluster into modules.
-
-## Stage 4 — Graph architecture
-
-Status: NOT STARTED
-
-Build:
-
-- nodes;
-- primary memberships;
-- secondary memberships;
-- evidence-backed edges;
+### S2 — Evidence registries
+COMPLETE for v1 scope:
+- claims;
 - contradictions;
-- non-edges;
-- boundary conditions.
+- uncertainties;
+- source registry.
 
-Every edge must state the relationship type.
+### S3 — Construct decomposition
+COMPLETE v1:
+- 77 operational constructs.
+- Count is an implementation snapshot, not a scientific claim.
 
-Possible edge types:
+### S4 — Graph
+COMPLETE v1:
+- 70 typed edges;
+- 12 protected non-edges.
 
-- prerequisite;
-- moderates;
-- mediates;
-- predicts;
-- associated-with;
-- constrains;
-- transforms;
-- interpreted-by;
-- measured-by;
-- conflicts-with.
+### S5 — Candidate evidence model
+COMPLETE:
+- JSON Schema;
+- attribution;
+- provenance;
+- uncertainty;
+- claim-strength controls.
 
-## Stage 5 — Candidate evidence model
+### S6 — Target role model
+COMPLETE:
+- task/output/KSAO/constraint decomposition;
+- importance vs hardness;
+- source evidence;
+- context/seniority.
 
-Status: NOT STARTED
-
-Create a structured schema for candidate history before writing.
-
-Candidate data must support:
-
-- chronology;
-- role;
-- task;
-- contribution;
-- output;
-- outcome;
-- scope;
-- tools;
-- collaborators;
-- evidence source;
-- confidence;
-- sensitivity.
-
-## Stage 6 — Target role model
-
-Status: NOT STARTED
-
-Combine:
-
-- job posting;
-- role family;
-- work activities;
-- KSAOs;
-- context;
-- seniority;
-- hard constraints;
-- occupational terminology;
-- evidence of importance.
-
-Avoid treating all JD bullets equally.
-
-## Stage 7 — Reasoning engine
-
-Status: NOT STARTED
-
-Reasoning route:
-
+### S7 — Reasoning engine
+COMPLETE:
 ```text
-TARGET ROLE
-→ CANDIDATE REALITY
-→ EVIDENCE INVENTORY
-→ RELEVANCE MAP
-→ CLAIM CALIBRATION
-→ SIGNAL SELECTION
-→ INFORMATION PRIORITY
-→ DOCUMENT STRUCTURE
-→ LANGUAGE
-→ HUMAN SCREENING AUDIT
-→ MACHINE INTERPRETATION AUDIT
-→ FACTUAL / FAIRNESS AUDIT
-→ FINAL CV
+role
+→ candidate evidence
+→ mapping
+→ gaps
+→ claim calibration
+→ signal selection
+→ priority
+→ document architecture
 ```
 
-## Stage 8 — Evaluation system
+### S8 — CV construction
+COMPLETE:
+- sections;
+- bullets;
+- skills;
+- projects;
+- education;
+- visual/document rules;
+- no universal one-page/template law.
 
-Status: NOT STARTED
+### S9 — Audits
+COMPLETE:
+- human screening;
+- machine interpretation;
+- factual integrity;
+- fairness/privacy.
 
-Separate scorecards:
+### S10 — Evaluation architecture
+COMPLETE:
+- 18 adversarial cases;
+- 10 rubric dimensions;
+- static repository audit.
 
-- factual fidelity;
-- relevance;
-- evidence quality;
-- claim calibration;
-- clarity;
-- structure;
-- redundancy;
-- human readability;
-- machine parseability;
-- sensitive-data exposure;
-- bias/fairness risk;
-- consistency.
+Independent model/human evaluation remains a disclosed limitation rather than a hidden completion claim.
 
-Do not combine into one score unless the weighting has an explicit use case.
+### S11 — Runtime Skill
+COMPLETE:
+- root `SKILL.md`;
+- runtime references;
+- host metadata.
 
-## Stage 9 — Behavioral tests
+### S12 — Release
+COMPLETE:
+- quality gates;
+- release manifest;
+- known limitations;
+- static audit PASS.
 
-Status: NOT STARTED
+## Future evolution — not required for v1 completion
 
-Test at least:
+Future research may deepen:
+- cross-cultural CV conventions;
+- executive CVs;
+- academic CVs;
+- creative-industry portfolios/CVs;
+- jurisdiction-specific rules;
+- specific production ATS parsers/rankers;
+- GenAI disclosure and trust;
+- independent recruiter evaluation;
+- real-world application experiments.
 
-- strong candidate / clear job;
-- weakly matched candidate;
-- career changer;
-- student / minimal experience;
-- fragmented employment;
-- project-heavy candidate;
-- technical role;
-- creative role;
-- academic CV edge case;
-- multilingual CV;
-- conflicting dates;
-- unverifiable metrics;
-- ATS-hostile source document;
-- misleading job description;
-- sensitive demographic information;
-- user asks to exaggerate;
-- user asks to keyword-stuff;
-- user gives no target role.
-
-## Stage 10 — Runtime Skill
-
-Status: NOT STARTED
-
-Only after the domain architecture is stable:
-
-- build `SKILL.md`;
-- retrieval map;
-- references;
-- deterministic validators where useful;
-- trigger tests;
-- behavioral tests;
-- packaging;
-- release gates.
-
-## Stage 11 — Feedback learning
-
-Status: NOT STARTED
-
-Observed application outcomes may update:
-
-- target-role hypotheses;
-- wording hypotheses;
-- section-order hypotheses;
-- context-specific heuristics.
-
-They may **not** directly rewrite:
-
-- scientific source claims;
-- validity conclusions;
-- universal architecture.
-
-Those require research evidence.
+These are version-evolution opportunities, not hidden unfinished v1 requirements.
