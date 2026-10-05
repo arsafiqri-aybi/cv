@@ -1,0 +1,31 @@
+{
+  "project": "cv",
+  "version": "1.0.0",
+  "release_status": "candidate_pending_static_audit",
+  "scientific_saturation_claimed": false,
+  "architecture": "CV as evidence-constrained screening representation in a socio-technical recruitment/selection system",
+  "protected_nonclaims": [
+    "No guarantee of interview or offer",
+    "No universal ATS score",
+    "No claim of strong CV→job-performance validity",
+    "No universal one-page rule",
+    "No universal best template"
+  ],
+  "components": {
+    "orchestration": true,
+    "research": true,
+    "taxonomy": true,
+    "graph": true,
+    "candidate_evidence_model": true,
+    "target_role_model": true,
+    "reasoning_engine": true,
+    "construction_system": true,
+    "human_audit": true,
+    "machine_audit": true,
+    "fairness_audit": true,
+    "evaluation_suite": true,
+    "runtime_skill": true
+  },
+  "expected_static_audit": "python scripts/audit_repository.py",
+  "ci_note": "GitHub Operator workflow writes unavailable; static audit is executed separately."
+}

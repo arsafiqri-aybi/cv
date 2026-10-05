@@ -1,0 +1,4 @@
+interface:
+  display_name: "CV"
+  short_description: "Evidence-grounded CV building, tailoring, and auditing"
+  default_prompt: "Use the CV skill to build or audit this resume from real candidate evidence and the target role without inventing facts."
