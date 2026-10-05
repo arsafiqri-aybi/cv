@@ -32,6 +32,26 @@ OBSERVED OUTCOMES / FEEDBACK
 
 The architecture is intentionally **not frozen into an arbitrary number of scientific cores**. Scientific disciplines and mechanisms may cut across multiple process layers.
 
+## Orchestration
+
+The project now separates domain knowledge from execution control:
+
+- `orchestration/MASTER_PROMPT.md` — mission, scientific stance, research program, architecture rules, adversarial rules, and completion gates.
+- `orchestration/SCALE.md` — stage/dependency architecture, protected constraints, routing envelope, verification, and re-plan triggers.
+- `orchestration/GOVERNOR.md` — research/resource allocation, context, evidence routing, escalation, retries, and stopping inside the Scale contract.
+
+Conceptually:
+
+```text
+MASTER PROMPT
+      ↓
+SCALE — defines the execution envelope
+      ↓
+GOVERNOR — allocates resources inside the envelope
+      ↓
+CV DOMAIN ARCHITECTURE + RESEARCH + REASONING + EVALUATION
+```
+
 ## What this project is trying to optimize
 
 A high-quality CV should increase:
@@ -102,6 +122,9 @@ The process model is accepted as the working scaffold. Module counts, neuron cou
 
 ## Repository map
 
+- `orchestration/MASTER_PROMPT.md` — master project prompt
+- `orchestration/SCALE.md` — execution architecture
+- `orchestration/GOVERNOR.md` — resource/evidence governor
 - `PROJECT_CONTRACT.md` — mission, scope, constraints, completion logic
 - `docs/ARCHITECTURE.md` — working architecture and layer model
 - `research/EVIDENCE_POLICY.md` — source and claim promotion rules
