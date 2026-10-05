@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CV Target Role Model",
+  "type": "object",
+  "required": [
+    "role_id",
+    "title",
+    "requirements"
+  ],
+  "properties": {
+    "role_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "organization": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "location": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "seniority": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_type",
+          "description"
+        ],
+        "properties": {
+          "source_type": {
+            "enum": [
+              "job_posting",
+              "company_site",
+              "occupational_database",
+              "recruiter_message",
+              "user_context",
+              "industry_reference",
+              "other"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "reference": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "freshness": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "statement",
+          "importance",
+          "evidence_basis"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "task",
+              "output",
+              "knowledge",
+              "skill",
+              "ability",
+              "credential",
+              "experience",
+              "tool",
+              "domain",
+              "constraint",
+              "context",
+              "behavioral"
+            ]
+          },
+          "statement": {
+            "type": "string"
+          },
+          "importance": {
+            "enum": [
+              "critical",
+              "high",
+              "medium",
+              "low",
+              "unknown"
+            ]
+          },
+          "hardness": {
+            "enum": [
+              "hard_constraint",
+              "strong_preference",
+              "preference",
+              "unknown"
+            ]
+          },
+          "evidence_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "work_outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "work_context": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
