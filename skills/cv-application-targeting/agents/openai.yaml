@@ -1,0 +1,4 @@
+interface:
+  display_name: "CV Application Targeting"
+  short_description: "Tailor a CV to a specific vacancy without fabricating fit"
+  default_prompt: "Use the CV Application Targeting skill to map real candidate evidence to this company, vacancy, role, and context, then produce a truthful application-specific CV variant."

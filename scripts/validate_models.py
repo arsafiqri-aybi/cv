@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Lightweight structural validator for CV project JSON instances."""
+"""Lightweight structural validators for CV project JSON instances."""
 import calendar
 import json
 import re
@@ -10,6 +10,8 @@ ALLOWED_OWNERSHIP={"sole","primary","shared","supporting","unknown"}
 ALLOWED_CONFIDENCE={"high","medium","low"}
 ALLOWED_CLAIM={"direct","bounded","descriptive_only","do_not_use"}
 ALLOWED_IMPORTANCE={"critical","high","medium","low","unknown"}
+ALLOWED_TARGETING={"T0_general","T1_role_family","T2_vacancy","T3_vacancy_company_context"}
+ALLOWED_WORK_ARRANGEMENT={"onsite","hybrid","remote","unknown"}
 DATE_RE=re.compile(r"^(\d{4})(?:-(\d{2})(?:-(\d{2}))?)?$")
 
 def load(path):
@@ -100,12 +102,68 @@ def validate_role(data):
             errors.append(f"{p}.evidence_basis must not be empty")
     return errors
 
+def validate_application(data):
+    errors=[]
+    if not isinstance(data.get("application_id"),str) or not data["application_id"]:
+        errors.append("application_id must be a non-empty string")
+    level=data.get("targeting_level")
+    if level not in ALLOWED_TARGETING:
+        errors.append("targeting_level invalid")
+    if not isinstance(data.get("target_role_id"),str) or not data["target_role_id"]:
+        errors.append("target_role_id must be a non-empty string")
+
+    # Concrete application levels require concrete vacancy/company identity.
+    if level in {"T2_vacancy","T3_vacancy_company_context"}:
+        if not data.get("company_name"):
+            errors.append("company_name required for T2/T3")
+        if not data.get("vacancy_title"):
+            errors.append("vacancy_title required for T2/T3")
+
+    # T3 must contain material company context rather than only a label.
+    if level=="T3_vacancy_company_context":
+        ctx=data.get("company_context") or {}
+        material=sum(len(ctx.get(k,[]) or []) for k in (
+            "industry_domain","products_services","customer_types",
+            "technology_context","regulatory_context","material_notes"
+        ))
+        if material == 0:
+            errors.append("T3 requires material company_context")
+
+    sources=data.get("sources")
+    if not isinstance(sources,list) or not sources:
+        errors.append("sources must contain at least one source")
+    else:
+        for i,source in enumerate(sources):
+            p=f"sources[{i}]"
+            if not source.get("source_type"):
+                errors.append(f"{p}.source_type missing")
+            if not source.get("description"):
+                errors.append(f"{p}.description missing")
+            if not valid_date(source.get("observed_date")):
+                errors.append(f"{p}.observed_date invalid")
+
+    if data.get("work_arrangement") not in ALLOWED_WORK_ARRANGEMENT:
+        errors.append("work_arrangement invalid")
+
+    generated=data.get("generated_date")
+    if generated is not None:
+        if not valid_date(generated) or len(generated)!=10:
+            errors.append("generated_date must be a real YYYY-MM-DD date")
+
+    return errors
+
 def main():
-    if len(sys.argv)!=3 or sys.argv[1] not in {"candidate","role"}:
-        print("usage: validate_models.py candidate|role FILE.json",file=sys.stderr)
+    if len(sys.argv)!=3 or sys.argv[1] not in {"candidate","role","application"}:
+        print("usage: validate_models.py candidate|role|application FILE.json",file=sys.stderr)
         return 2
     data=load(sys.argv[2])
-    errors=validate_candidate(data) if sys.argv[1]=="candidate" else validate_role(data)
+    mode=sys.argv[1]
+    if mode=="candidate":
+        errors=validate_candidate(data)
+    elif mode=="role":
+        errors=validate_role(data)
+    else:
+        errors=validate_application(data)
     if errors:
         for e in errors:
             print(f"ERROR: {e}")

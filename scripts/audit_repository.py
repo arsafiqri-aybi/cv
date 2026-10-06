@@ -47,6 +47,8 @@ REQUIRED=[
  "skills/cv-application-targeting/references/OUTPUT_CONTRACT.md",
  "skills/cv-application-targeting/evaluation/cases.json",
  "skills/cv-application-targeting/application-target-spec.json",
+ "skills/cv-application-targeting/references/README.md",
+ "skills/cv-application-targeting/agents/openai.yaml",
  "release/RELEASE_MANIFEST.json","release/RELEASE_NOTES.md",
  "release/KNOWN_LIMITATIONS.md","release/QUALITY_GATES.md",
 ]
@@ -166,6 +168,50 @@ def main():
                 fail(f"target-application schema missing {key}",errors)
     except Exception as exc:
         fail(f"application-targeting validation error: {exc}",errors)
+
+    # Target-application runtime validator self-test
+    try:
+        app_good={
+            "application_id":"A1",
+            "targeting_level":"T2_vacancy",
+            "company_name":"Example Co",
+            "vacancy_title":"Software Engineer",
+            "target_role_id":"R1",
+            "work_arrangement":"unknown",
+            "sources":[{"source_type":"job_posting","description":"active posting","observed_date":"2026-10-06"}],
+            "generated_date":"2026-10-06"
+        }
+        if validate_models.validate_application(app_good):
+            fail("valid T2 target application rejected",errors)
+
+        app_bad_skillless_context={
+            "application_id":"A2",
+            "targeting_level":"T3_vacancy_company_context",
+            "company_name":"Example Co",
+            "vacancy_title":"Software Engineer",
+            "target_role_id":"R1",
+            "work_arrangement":"unknown",
+            "sources":[{"source_type":"job_posting","description":"posting","observed_date":"2026-10-06"}],
+            "company_context":{},
+            "generated_date":"2026-10-06"
+        }
+        if not validate_models.validate_application(app_bad_skillless_context):
+            fail("T3 without material company context incorrectly accepted",errors)
+
+        app_bad_date={
+            "application_id":"A3",
+            "targeting_level":"T2_vacancy",
+            "company_name":"Example Co",
+            "vacancy_title":"Software Engineer",
+            "target_role_id":"R1",
+            "work_arrangement":"unknown",
+            "sources":[{"source_type":"job_posting","description":"posting","observed_date":"2026-99-99"}],
+            "generated_date":"2026-10-06"
+        }
+        if not validate_models.validate_application(app_bad_date):
+            fail("invalid target-application source date incorrectly accepted",errors)
+    except Exception as exc:
+        fail(f"target-application runtime validation error: {exc}",errors)
 
     # Candidate date schema + runtime self-test
     try:
