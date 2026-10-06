@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Static audit for the CV repository."""
 import json
-import sys
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -12,6 +11,19 @@ REQUIRED=[
  "graph/non_edges.json","reasoning/ENGINE.md","construction/CV_CONSTRUCTION.md",
  "audits/HUMAN_SCREENING.md","audits/MACHINE_SCREENING.md",
  "audits/FAIRNESS_PRIVACY.md","evaluation/rubric.json","evaluation/cases.json",
+ "skills/cv-document-structure/SKILL.md",
+ "skills/cv-document-structure/orchestration/MASTER_PROMPT.md",
+ "skills/cv-document-structure/orchestration/SCALE.md",
+ "skills/cv-document-structure/orchestration/GOVERNOR.md",
+ "skills/cv-document-structure/references/SCIENCE_BASE.md",
+ "skills/cv-document-structure/references/STRUCTURE_ARCHITECTURE.md",
+ "skills/cv-document-structure/references/SECTION_SYSTEM.md",
+ "skills/cv-document-structure/references/TYPOGRAPHY_LAYOUT.md",
+ "skills/cv-document-structure/references/PDF_MACHINE_COMPATIBILITY.md",
+ "skills/cv-document-structure/references/DECISION_MATRIX.md",
+ "skills/cv-document-structure/references/OUTPUT_CONTRACT.md",
+ "skills/cv-document-structure/evaluation/cases.json",
+ "skills/cv-document-structure/structure-spec.json",
 ]
 
 def fail(msg, errors):
@@ -45,6 +57,18 @@ def main():
             fail("factual_fidelity must be critical",errors)
     except Exception as exc:
         fail(f"rubric validation error: {exc}",errors)
+
+    try:
+        ds_cases=json.loads((ROOT/"skills/cv-document-structure/evaluation/cases.json").read_text())
+        if len(ds_cases.get("cases",[])) < 12:
+            fail("document-structure skill needs >=12 adversarial cases",errors)
+        spec=json.loads((ROOT/"skills/cv-document-structure/structure-spec.json").read_text())
+        if "reading_order" not in spec.get("required_artifact_tests",[]):
+            fail("document-structure spec must require reading_order test",errors)
+        if not spec.get("defaults",{}).get("note"):
+            fail("engineering defaults must be explicitly labeled",errors)
+    except Exception as exc:
+        fail(f"document-structure validation error: {exc}",errors)
 
     if errors:
         for e in errors:

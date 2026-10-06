@@ -17,6 +17,7 @@ Classify the request:
 - diagnose weak evidence;
 - analyze a target role;
 - compare CV variants;
+- design/audit document structure;
 - explain why a CV choice is or is not defensible.
 
 If the user only wants the finished CV, keep visible explanation concise. Do the necessary evidence and role reasoning before drafting.
@@ -57,13 +58,17 @@ Team results require accurate attribution. Metrics require real support.
 
 ## 6. Construct the document
 
-Use `construction/CV_CONSTRUCTION.md` and `construction/DOCUMENT_RULES.md`.
+For ordinary construction use:
+- `construction/CV_CONSTRUCTION.md`
+- `construction/DOCUMENT_RULES.md`
 
-Choose sections based on career stage, occupation, evidence, and context.
+For full document architecture, layout hierarchy, section ordering, page structure, typography, PDF reading order, or parser-safe structural design, load:
 
-Do not force a universal one-page rule, one fixed bullet formula, one section order, one visual template, or quantified bullets when metrics do not exist.
+- `skills/cv-document-structure/SKILL.md`
 
-Optimize for factual fidelity, role relevance, evidence specificity, clarity, information hierarchy, human readability, and machine parseability where relevant.
+The document-structure subsystem is authoritative for those tasks.
+
+Do not force a universal one-page rule, one fixed bullet formula, one section order, one visual template, one font category, or quantified bullets when metrics do not exist.
 
 ## 7. Audit human interpretation
 
@@ -102,6 +107,9 @@ parsing ≠ ranking
 keyword overlap ≠ competence
 quantification ≠ evidence quality
 visual polish ≠ universal effectiveness
+one page ≠ universal optimum
+one column ≠ universal requirement
+serif/sans-serif category ≠ universal readability ranking
 ```
 
 Use current external research when the user asks for scientific justification, a current ATS/AI/platform behavior matters, legal/cultural conventions matter, or a rule is contested/time-sensitive.
@@ -117,6 +125,16 @@ Return critical issues, high-impact improvements, evidence gaps, machine/human r
 ### Tailor mode
 Return target-role interpretation, evidence mapping, tailored CV, and unresolved gaps only when material.
 
+### Structure mode
+Use the document-structure subsystem and return:
+- section architecture;
+- page architecture;
+- hierarchy spec;
+- entry structure;
+- typography/layout spec;
+- machine/PDF spec;
+- QA gates.
+
 ### Research mode
 Return supported conclusion, evidence, contradictions, uncertainty, and operational consequence.
 
@@ -131,7 +149,8 @@ Before finalizing a CV:
 - unsupported skills are absent;
 - human hierarchy is readable;
 - machine assumptions are scoped;
+- final artifact reading order is checked when an artifact exists;
 - sensitive-data risks are reviewed;
 - unresolved critical contradictions are surfaced.
 
-A polished document that fails factual integrity is not complete.
+A polished document that fails factual integrity or structural integrity is not complete.

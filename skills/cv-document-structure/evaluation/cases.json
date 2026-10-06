@@ -1,0 +1,139 @@
+{
+  "version": "1.0",
+  "cases": [
+    {
+      "id": "DS01",
+      "name": "Student with projects stronger than work history",
+      "must": [
+        "allow projects above experience",
+        "education priority context-dependent",
+        "avoid forced professional summary"
+      ]
+    },
+    {
+      "id": "DS02",
+      "name": "Senior candidate needs two pages",
+      "must": [
+        "preserve high-value evidence",
+        "not shrink to illegibility",
+        "use coherent page breaks"
+      ]
+    },
+    {
+      "id": "DS03",
+      "name": "Sparse early-career evidence",
+      "must": [
+        "avoid artificial second page",
+        "avoid whitespace panic",
+        "keep legible density"
+      ]
+    },
+    {
+      "id": "DS04",
+      "name": "Career changer",
+      "must": [
+        "use transition summary only if useful",
+        "surface transferable evidence",
+        "retain complete chronology"
+      ]
+    },
+    {
+      "id": "DS05",
+      "name": "Two-column design",
+      "must": [
+        "require extraction-order test",
+        "allow conditionally",
+        "not claim universal ATS failure"
+      ]
+    },
+    {
+      "id": "DS06",
+      "name": "Creative designer",
+      "must": [
+        "allow expressive hierarchy",
+        "protect machine-safe pathway",
+        "retain semantic headings"
+      ]
+    },
+    {
+      "id": "DS07",
+      "name": "Academic CV",
+      "must": [
+        "switch document model",
+        "not force industry page limits"
+      ]
+    },
+    {
+      "id": "DS08",
+      "name": "Tiny font one-page draft",
+      "must": [
+        "edit relevance first",
+        "reject illegibility as compression strategy"
+      ]
+    },
+    {
+      "id": "DS09",
+      "name": "Contact info only in PDF header",
+      "must": [
+        "flag parser risk when platform unknown",
+        "keep critical text recoverable"
+      ]
+    },
+    {
+      "id": "DS10",
+      "name": "Section labels are creative metaphors",
+      "must": [
+        "prefer explicit semantics",
+        "explain section-detection risk"
+      ]
+    },
+    {
+      "id": "DS11",
+      "name": "Serif vs sans-serif request",
+      "must": [
+        "reject universal superiority claim",
+        "optimize legibility/embedding/context"
+      ]
+    },
+    {
+      "id": "DS12",
+      "name": "One-page rule request",
+      "must": [
+        "explain context dependence",
+        "use evidence density"
+      ]
+    },
+    {
+      "id": "DS13",
+      "name": "Role entry split across pages",
+      "must": [
+        "keep title/date with content",
+        "repair page break"
+      ]
+    },
+    {
+      "id": "DS14",
+      "name": "Parser extracts words but interleaves columns",
+      "must": [
+        "classify order corruption",
+        "not call parse success"
+      ]
+    },
+    {
+      "id": "DS15",
+      "name": "Dense skills sidebar",
+      "must": [
+        "evaluate relevance and association",
+        "avoid unsupported keyword dump"
+      ]
+    },
+    {
+      "id": "DS16",
+      "name": "Obscure extracurricular organization",
+      "must": [
+        "add minimal explanatory context if useful",
+        "avoid assuming recruiter familiarity"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "version": "1.0",
+  "hierarchy_levels": [
+    {
+      "id": "H0",
+      "role": "candidate_name"
+    },
+    {
+      "id": "H1",
+      "role": "section_heading"
+    },
+    {
+      "id": "H2",
+      "role": "entry_title"
+    },
+    {
+      "id": "M1",
+      "role": "organization_or_institution"
+    },
+    {
+      "id": "M2",
+      "role": "dates_location_metadata"
+    },
+    {
+      "id": "B1",
+      "role": "evidence_bullet"
+    },
+    {
+      "id": "B2",
+      "role": "supporting_detail"
+    }
+  ],
+  "semantic_invariants": [
+    "section names reflect content",
+    "role organization dates remain associated",
+    "bullets remain associated with their entry",
+    "critical contact data is recoverable as text",
+    "reading order remains meaningful",
+    "page breaks preserve semantic chunks"
+  ],
+  "defaults": {
+    "page_layout": "single_column_when_submission_platform_unknown",
+    "body_size_pt_range": [
+      10.5,
+      12
+    ],
+    "line_height_multiplier_range": [
+      1.15,
+      1.35
+    ],
+    "margin_in_range": [
+      0.55,
+      0.85
+    ],
+    "note": "Engineering defaults, not universal scientific constants."
+  },
+  "required_artifact_tests": [
+    "human_visual_scan",
+    "text_extraction",
+    "reading_order",
+    "entity_association",
+    "link_integrity",
+    "clipping_overflow"
+  ]
+}

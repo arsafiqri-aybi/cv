@@ -1,8 +1,8 @@
 # CV
 
-**Release: v1.0.0 — PROJECT_COMPLETE_V1**
+**Release: v1.1.0 — PROJECT_COMPLETE_V1 + Document Structure Subsystem**
 
-Research-grounded architecture and runtime system for understanding, constructing, tailoring, and auditing CVs/résumés.
+Research-grounded architecture and runtime system for understanding, constructing, tailoring, structuring, and auditing CVs/résumés.
 
 ## Central model
 
@@ -28,47 +28,43 @@ SCREENING OUTCOME
 FEEDBACK
 ```
 
-## Release snapshot
+## Runtime systems
 
-- 77 operational constructs
-- 70 typed graph edges
-- 12 protected non-edges
-- 18 adversarial evaluation cases
-- 10 evaluation dimensions
-- candidate evidence JSON Schema
-- target-role JSON Schema
-- reasoning + claim-calibration engine
-- CV construction system
-- human/machine/factual/fairness audits
-- root runtime `SKILL.md`
-- static release audit: **PASS**
+### Root CV Skill
+`SKILL.md`
 
-Scientific saturation is **not claimed**.
+Handles:
+- evidence;
+- target role;
+- mapping;
+- claim calibration;
+- CV construction;
+- audits.
 
-## Orchestration
+### CV Document Structure Skill
+`skills/cv-document-structure/SKILL.md`
 
-```text
-MASTER PROMPT
-↓
-SCALE
-↓
-GOVERNOR
-↓
-DOMAIN SCIENCE
-↓
-REASONING
-↓
-CONSTRUCTION
-↓
-AUDIT
-↓
-EVALUATION
-```
+Handles:
+- semantic section architecture;
+- section inclusion/order;
+- page architecture;
+- information hierarchy;
+- entry microstructure;
+- typography/spacing;
+- one-vs-two page decisions;
+- single-vs-multi-column decisions;
+- PDF reading order;
+- machine extraction robustness;
+- final artifact structure QA.
 
-Files:
-- `orchestration/MASTER_PROMPT.md`
-- `orchestration/SCALE.md`
-- `orchestration/GOVERNOR.md`
+Its research base explicitly separates:
+- CV-specific research;
+- adjacent document science;
+- technical standards;
+- parser research;
+- technical benchmarks;
+- engineering defaults;
+- contextual heuristics.
 
 ## Protected distinctions
 
@@ -81,46 +77,34 @@ parsing ≠ ranking
 keyword overlap ≠ competence
 quantification ≠ evidence quality
 visual polish ≠ universal effectiveness
+one page ≠ universal optimum
+one column ≠ universal requirement
+serif/sans-serif ≠ universal readability ranking
 ```
 
-## Runtime
+## Automated validation
 
-Use `SKILL.md`.
+GitHub Actions:
+`.github/workflows/validate.yml`
 
-The runtime:
-1. models target role;
-2. structures candidate evidence;
-3. maps evidence to requirements;
-4. diagnoses gaps;
-5. calibrates claims;
-6. selects signals;
-7. constructs the document;
-8. audits human interpretation;
-9. audits machine interpretation;
-10. verifies factual integrity and fairness/privacy risk.
+On pushes to main and pull requests it compiles validators and runs:
+`python scripts/audit_repository.py`
+
+The audit now also verifies the CV Document Structure subsystem.
 
 ## Repository map
 
-- `PROJECT_CONTRACT.md` — scope and invariants
-- `docs/ARCHITECTURE.md` — process architecture
-- `research/` — evidence, claims, contradictions, uncertainty
-- `science/` — taxonomy
-- `graph/` — nodes, edges, protected non-edges
+- `orchestration/` — root execution control
+- `research/` — CV science
+- `graph/` — knowledge graph
 - `candidate_evidence/` — candidate truth model
 - `target_role/` — target-role model
-- `schemas/` — machine-readable schemas
 - `reasoning/` — mapping and claim calibration
-- `construction/` — CV/document construction
-- `audits/` — human, machine, factual, fairness/privacy audits
-- `evaluation/` — rubric, adversarial cases, evaluation status
-- `references/` — runtime progressive-disclosure references
-- `release/` — manifest, gates, limitations, notes
+- `construction/` — core construction rules
+- `skills/cv-document-structure/` — specialized document-structure skill
+- `audits/` — human/machine/factual/fairness audits
+- `evaluation/` — root evaluation
+- `release/` — release controls
 - `scripts/` — deterministic validators
 
-## Important limitation
-
-PROJECT_COMPLETE_V1 means the defined operational v1 scope is complete and statically verified.
-
-It does not mean every scientific question about CVs is settled or that interviews/offers can be guaranteed.
-
-See `release/KNOWN_LIMITATIONS.md`.
+Scientific saturation is not claimed.
