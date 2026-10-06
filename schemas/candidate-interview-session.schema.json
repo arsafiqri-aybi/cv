@@ -1,0 +1,243 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CV Candidate Discovery Session",
+  "type": "object",
+  "required": [
+    "session_id",
+    "candidate_id",
+    "mode",
+    "episodes",
+    "asked_intents",
+    "answered_intents",
+    "open_gaps",
+    "contradictions"
+  ],
+  "properties": {
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "enum": [
+        "master_discovery",
+        "target_delta"
+      ]
+    },
+    "target_application_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "candidate_preferences": {
+      "type": "object",
+      "properties": {
+        "language": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "question_style": {
+          "enum": [
+            "one_at_a_time",
+            "compact_batch",
+            "adaptive"
+          ]
+        },
+        "avoid_repetition": {
+          "type": "boolean"
+        },
+        "max_followup_rounds_default": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        }
+      },
+      "additionalProperties": false
+    },
+    "episodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "episode_id",
+          "episode_type",
+          "coverage_state"
+        ],
+        "properties": {
+          "episode_id": {
+            "type": "string"
+          },
+          "episode_type": {
+            "enum": [
+              "employment",
+              "project",
+              "education",
+              "certification",
+              "volunteer",
+              "research",
+              "publication",
+              "award",
+              "other"
+            ]
+          },
+          "coverage_state": {
+            "enum": [
+              "UNSEEN",
+              "DISCOVERED",
+              "PARTIAL",
+              "CV_USABLE",
+              "TARGET_READY",
+              "BLOCKED"
+            ]
+          },
+          "followup_rounds": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "known_intents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "open_intents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "asked_intents": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "answered_intents": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "open_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "gap_id",
+          "priority",
+          "intent_key",
+          "reason"
+        ],
+        "properties": {
+          "gap_id": {
+            "type": "string"
+          },
+          "priority": {
+            "enum": [
+              "P0",
+              "P1",
+              "P2",
+              "P3"
+            ]
+          },
+          "episode_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "intent_key": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "target_application_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "contradictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "contradiction_id",
+          "field",
+          "values",
+          "status"
+        ],
+        "properties": {
+          "contradiction_id": {
+            "type": "string"
+          },
+          "episode_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "field": {
+            "type": "string"
+          },
+          "values": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "enum": [
+              "OPEN",
+              "RESOLVED"
+            ]
+          },
+          "resolution": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "deferred_optional": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "last_checkpoint": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

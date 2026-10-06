@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "modes": [
+    "master_discovery",
+    "target_delta"
+  ],
+  "coverage_states": [
+    "UNSEEN",
+    "DISCOVERED",
+    "PARTIAL",
+    "CV_USABLE",
+    "TARGET_READY",
+    "BLOCKED"
+  ],
+  "gap_priorities": [
+    "P0",
+    "P1",
+    "P2",
+    "P3"
+  ],
+  "default_question_style": "one_at_a_time",
+  "default_max_followup_rounds_per_topic": 2,
+  "hard_invariants": [
+    "do not knowingly repeat an answered semantic intent",
+    "update state after every answer before asking again",
+    "do not require metrics when none are reliably known",
+    "stop a topic when CV_USABLE and no material blocker remains",
+    "target-specific interviews are delta-only",
+    "candidate truth remains authoritative"
+  ],
+  "reask_reasons": [
+    "CONTRADICTION",
+    "AMBIGUITY",
+    "INSUFFICIENT_PRECISION",
+    "CORRECTION",
+    "NEW_EVIDENCE"
+  ],
+  "default_stop_condition": "no P0/P1 gaps and no material target P2 gaps"
+}

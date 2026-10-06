@@ -1,0 +1,197 @@
+{
+  "version": "1.0",
+  "cases": [
+    {
+      "id": "CD01",
+      "name": "Already answered employer and role",
+      "must": [
+        "not ask employer/role again",
+        "ask next missing intent"
+      ]
+    },
+    {
+      "id": "CD02",
+      "name": "Same fact phrased differently",
+      "must": [
+        "deduplicate by semantic intent",
+        "not treat wording difference as new question"
+      ]
+    },
+    {
+      "id": "CD03",
+      "name": "Conflicting employment dates",
+      "must": [
+        "create P0 contradiction",
+        "ask delta clarification"
+      ]
+    },
+    {
+      "id": "CD04",
+      "name": "Project already CV-usable",
+      "must": [
+        "stop probing",
+        "move to next material episode"
+      ]
+    },
+    {
+      "id": "CD05",
+      "name": "No reliable metrics",
+      "must": [
+        "record unavailable/unknown",
+        "not pressure for numbers again"
+      ]
+    },
+    {
+      "id": "CD06",
+      "name": "Target requires tool usage detail",
+      "must": [
+        "ask P2 delta only if existing evidence insufficient",
+        "not restart project interview"
+      ]
+    },
+    {
+      "id": "CD07",
+      "name": "Long rich answer fills multiple fields",
+      "must": [
+        "extract all fields",
+        "skip questions answered implicitly"
+      ]
+    },
+    {
+      "id": "CD08",
+      "name": "Short vague answer",
+      "must": [
+        "ask one targeted P1 probe",
+        "avoid multi-question interrogation"
+      ]
+    },
+    {
+      "id": "CD09",
+      "name": "Endless interesting project detail",
+      "must": [
+        "respect probe budget",
+        "move on after sufficiency"
+      ]
+    },
+    {
+      "id": "CD10",
+      "name": "Candidate corrects earlier title",
+      "must": [
+        "preserve correction history",
+        "update preferred fact"
+      ]
+    },
+    {
+      "id": "CD11",
+      "name": "New company with existing master interview",
+      "must": [
+        "load master evidence",
+        "run target-delta only"
+      ]
+    },
+    {
+      "id": "CD12",
+      "name": "P3 enrichment",
+      "must": [
+        "defer",
+        "not ask by default"
+      ]
+    },
+    {
+      "id": "CD13",
+      "name": "Skill without supporting episode",
+      "must": [
+        "ask provenance only if material",
+        "link evidence"
+      ]
+    },
+    {
+      "id": "CD14",
+      "name": "Candidate fatigue",
+      "must": [
+        "finish material blocker",
+        "defer optional",
+        "stop cleanly"
+      ]
+    },
+    {
+      "id": "CD15",
+      "name": "Education already sufficient",
+      "must": [
+        "mark CV_USABLE",
+        "avoid coursework deep dive unless relevant"
+      ]
+    },
+    {
+      "id": "CD16",
+      "name": "Team outcome unclear ownership",
+      "must": [
+        "ask ownership delta",
+        "avoid sole attribution"
+      ]
+    },
+    {
+      "id": "CD17",
+      "name": "Only year known",
+      "must": [
+        "preserve year-only precision",
+        "not ask month unless needed"
+      ]
+    },
+    {
+      "id": "CD18",
+      "name": "Many episodes discovered",
+      "must": [
+        "prioritize material episodes",
+        "avoid exhausting first episode"
+      ]
+    },
+    {
+      "id": "CD19",
+      "name": "Answer includes GitHub link",
+      "must": [
+        "capture provenance automatically",
+        "not ask for link again"
+      ]
+    },
+    {
+      "id": "CD20",
+      "name": "Target changes",
+      "must": [
+        "keep master evidence",
+        "recompute only P2 gaps"
+      ]
+    },
+    {
+      "id": "CD21",
+      "name": "User requests no repeats",
+      "must": [
+        "persist preference",
+        "enforce semantic dedupe"
+      ]
+    },
+    {
+      "id": "CD22",
+      "name": "Optional failure story",
+      "must": [
+        "skip unless material"
+      ]
+    },
+    {
+      "id": "CD23",
+      "name": "Current role mixed ongoing/completed work",
+      "must": [
+        "preserve meaning",
+        "allow mixed tense evidence"
+      ]
+    },
+    {
+      "id": "CD24",
+      "name": "Ambiguous we-built statement",
+      "must": [
+        "ask candidate contribution/ownership delta",
+        "retain team context"
+      ]
+    }
+  ]
+}
