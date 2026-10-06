@@ -1,105 +1,101 @@
 # CV
 
-**Release: v1.1.0 — PROJECT_COMPLETE_V1 release line**
+**Release: v1.2.0 — PROJECT_COMPLETE_V1 release line**
 
-Research-grounded architecture and runtime system for understanding, constructing, tailoring, structuring, and auditing CVs/resumes.
+Research-grounded system for evidence-grounded CV construction, application targeting, document structure, and auditing.
 
 ## Central model
 
-> A CV is a strategically constructed but evidence-constrained representation of a candidate, used as one input in a socio-technical recruitment and selection system under uncertainty.
+```text
+CANDIDATE MASTER EVIDENCE
+        +
+TARGET APPLICATION
+(company × vacancy × role × context)
+        ↓
+REQUIREMENT / EVIDENCE MAP
+        ↓
+CLAIM-CALIBRATED TAILORING
+        ↓
+APPLICATION-SPECIFIC CV VARIANT
+        ↓
+DOCUMENT STRUCTURE + AUDITS
+```
 
-## Canonical standards
-
-Repository-wide consistency is governed by:
-
-- `standards/CONSISTENCY_STANDARD.md`
-- `standards/DATE_STANDARD.md`
-
-These are authoritative for:
-- section IDs/display labels;
-- date normalization/display;
-- hierarchy IDs;
-- typography/page units;
-- location style;
-- technology casing;
-- metrics;
-- acronyms;
-- bullet punctuation/tense;
-- links;
-- column terminology.
-
-Consistency never overrides factual precision.
+Candidate truth remains stable across variants.
 
 ## Runtime systems
 
 ### Root CV Skill
 `SKILL.md`
 
-Handles evidence, target role, mapping, claim calibration, CV construction, and audits.
+### Application Targeting Skill
+`skills/cv-application-targeting/SKILL.md`
 
-### CV Document Structure Skill
+Use for:
+- tailoring to a specific vacancy;
+- company/role targeting;
+- comparing variants;
+- evidence-to-JD mapping;
+- deciding what to select/omit/reorder/emphasize;
+- controlling legitimate company context.
+
+### Document Structure Skill
 `skills/cv-document-structure/SKILL.md`
 
-Handles:
-- semantic section architecture;
-- page architecture;
-- information hierarchy;
-- entry microstructure;
-- date/metadata consistency;
-- typography/spacing;
-- page-length decisions;
-- single-column/multi-column decisions;
+Use for:
+- section/page architecture;
+- typography/layout;
 - PDF reading order;
-- machine extraction robustness;
-- final artifact QA.
+- machine extraction;
+- artifact QA.
 
-## Protected distinctions
+## Targeting principle
+
+Do not encode:
 
 ```text
-interview success ≠ job-performance validity
-writing quality ≠ capability
-experience duration ≠ competence
-perceived fit ≠ objective fit
-parsing ≠ ranking
-keyword overlap ≠ competence
-quantification ≠ evidence quality
-visual polish ≠ universal effectiveness
-one page ≠ universal optimum
-single-column ≠ universal requirement
-serif/sans-serif ≠ universal readability ranking
-display precision ≠ factual precision
+one company = one totally unique CV
 ```
+
+Use:
+
+```text
+one master evidence base
+→ one serious target application
+→ one application-specific CV variant
+```
+
+The strongest targeting unit is:
+
+```text
+company × vacancy × target role × context
+```
+
+Company-specific context is secondary to vacancy/role relevance and only used when it materially changes a CV decision.
+
+## Canonical standards
+
+- `standards/CONSISTENCY_STANDARD.md`
+- `standards/DATE_STANDARD.md`
+
+## Research boundaries
+
+Protect:
+- tailoring ≠ fabrication;
+- role relevance ≠ company flattery;
+- terminology alignment ≠ keyword stuffing;
+- company context ≠ culture mimicry;
+- company-focused tailoring association ≠ proven independent causal advantage.
 
 ## Automated validation
 
-GitHub Actions:
 `.github/workflows/validate.yml`
 
-On pushes to main and pull requests it compiles validators and runs:
-`python scripts/audit_repository.py`
-
-The audit covers both the root CV system and document-structure consistency.
-
-## Versioning
-
-Repository release version: `1.1.0`.
-
-Individual research/taxonomy components can retain their own version when their content has not changed.
-
-## Repository map
-
-- `standards/` — canonical consistency/date standards
-- `orchestration/` — root execution control
-- `research/` — CV science
-- `graph/` — knowledge graph
-- `candidate_evidence/` — candidate truth model
-- `target_role/` — target-role model
-- `reasoning/` — mapping and claim calibration
-- `construction/` — core construction
-- `skills/cv-document-structure/` — specialized structure Skill
-- `audits/` — human/machine/factual/fairness audits
-- `evaluation/` — root evaluation
-- `release/` — release controls
-- `scripts/` — deterministic validators
+The static audit covers:
+- root architecture;
+- document structure;
+- consistency/date standards;
+- application targeting;
+- schemas/evaluation coverage.
 
 Scientific saturation is not claimed.

@@ -1,10 +1,13 @@
-# Target Role Model v1
+# Target Role Model v1.1
 
 ## Purpose
 
 Represent the target work before tailoring the CV.
 
-The model is **not** a copy of the job description.
+The model is not a copy of the job description and is distinct from the Target Application.
+
+Use:
+- `application_targeting/MODEL.md` for company/vacancy/application context.
 
 ## Inputs
 
@@ -21,8 +24,7 @@ Each source is evidence, not automatic ground truth.
 
 ## Requirement decomposition
 
-A role requirement can be classified as:
-
+A role requirement can be:
 - task;
 - output;
 - knowledge;
@@ -37,7 +39,6 @@ A role requirement can be classified as:
 - behavioral.
 
 Each requirement receives:
-
 - importance;
 - hardness;
 - evidence basis;
@@ -46,15 +47,9 @@ Each requirement receives:
 
 ## Importance vs hardness
 
-These are different.
+A hard eligibility gate is not automatically the most predictive or important work requirement.
 
-Example:
-
-A degree may be a **hard constraint** for one employer while a specific daily task is **high importance** for successful work.
-
-Do not equate a formal gate with predictive importance.
-
-## Target-role inference route
+## Inference route
 
 ```text
 SOURCE MATERIAL
@@ -67,19 +62,18 @@ SOURCE MATERIAL
 → OPEN QUESTIONS
 ```
 
-## Job-description guardrails
+## Guardrails
 
 Do not assume:
-- every bullet has equal importance;
-- frequency of a keyword equals importance;
-- preferred requirements are mandatory;
+- every JD bullet is equally important;
+- keyword frequency equals importance;
+- preferred means mandatory;
 - employer language is technically precise;
-- all responsibilities are current;
-- a generic corporate template fully describes the real role.
+- generic company role pages equal the active vacancy.
 
 ## Role-to-evidence matching
 
-Matching should consider:
+Consider:
 - direct relevance;
 - adjacent/transferable evidence;
 - recency;
@@ -88,4 +82,15 @@ Matching should consider:
 - evidence strength;
 - semantic alignment.
 
-The output is a **relevance map**, not a claim that the candidate objectively "fits" the job.
+The output is a relevance map, not objective fit.
+
+## Boundary
+
+```text
+TARGET ROLE
+≠
+TARGET APPLICATION
+
+role model = work reality
+application model = company × vacancy × role × context
+```

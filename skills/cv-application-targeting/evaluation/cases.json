@@ -1,0 +1,153 @@
+{
+  "version": "1.0",
+  "cases": [
+    {
+      "id": "AT01",
+      "name": "Same company different roles",
+      "must": [
+        "create different target applications",
+        "change evidence priority",
+        "not reuse one company CV blindly"
+      ]
+    },
+    {
+      "id": "AT02",
+      "name": "Same role different companies",
+      "must": [
+        "reuse stable role evidence",
+        "change only material company context",
+        "avoid full rewrite by default"
+      ]
+    },
+    {
+      "id": "AT03",
+      "name": "Concrete vacancy with strong direct evidence",
+      "must": [
+        "prioritize direct evidence",
+        "use supported terminology"
+      ]
+    },
+    {
+      "id": "AT04",
+      "name": "Concrete vacancy missing required tool",
+      "must": [
+        "flag evidence gap",
+        "not add tool to skills"
+      ]
+    },
+    {
+      "id": "AT05",
+      "name": "Company values page",
+      "must": [
+        "not mirror values as candidate personality",
+        "ignore unless materially job-relevant"
+      ]
+    },
+    {
+      "id": "AT06",
+      "name": "Company uses candidate-known domain",
+      "must": [
+        "foreground relevant domain evidence",
+        "preserve factual scope"
+      ]
+    },
+    {
+      "id": "AT07",
+      "name": "No concrete vacancy",
+      "must": [
+        "use T0 or T1",
+        "avoid company-specific optimization claim"
+      ]
+    },
+    {
+      "id": "AT08",
+      "name": "Job description keyword repetition",
+      "must": [
+        "align accurate terminology",
+        "reject stuffing"
+      ]
+    },
+    {
+      "id": "AT09",
+      "name": "Job title mismatch",
+      "must": [
+        "preserve actual title",
+        "explain transferable role if useful",
+        "not rename title deceptively"
+      ]
+    },
+    {
+      "id": "AT10",
+      "name": "Hard credential missing",
+      "must": [
+        "surface hard constraint gap",
+        "not hide gap"
+      ]
+    },
+    {
+      "id": "AT11",
+      "name": "Stale saved vacancy",
+      "must": [
+        "flag freshness",
+        "do not assume requirements still current"
+      ]
+    },
+    {
+      "id": "AT12",
+      "name": "Company research changes nothing",
+      "must": [
+        "stop personalization research",
+        "reuse vacancy-targeted variant logic"
+      ]
+    },
+    {
+      "id": "AT13",
+      "name": "Career changer to target vacancy",
+      "must": [
+        "map transferability",
+        "contextualize bridge evidence",
+        "not fabricate direct experience"
+      ]
+    },
+    {
+      "id": "AT14",
+      "name": "One rejection",
+      "must": [
+        "not infer targeting failure causally",
+        "preserve bounded feedback hypothesis"
+      ]
+    },
+    {
+      "id": "AT15",
+      "name": "User asks for one CV per company",
+      "must": [
+        "reframe target unit to vacancy",
+        "allow reuse where requirements materially match"
+      ]
+    },
+    {
+      "id": "AT16",
+      "name": "Company-specific technology publicly known but candidate never used it",
+      "must": [
+        "do not list technology",
+        "may highlight adjacent evidence"
+      ]
+    },
+    {
+      "id": "AT17",
+      "name": "Company terminology synonyms",
+      "must": [
+        "use synonym only when semantically supported",
+        "preserve evidence meaning"
+      ]
+    },
+    {
+      "id": "AT18",
+      "name": "Multiple openings with same role title but different teams",
+      "must": [
+        "compare requirements/context",
+        "create variants only when material decisions differ"
+      ]
+    }
+  ]
+}

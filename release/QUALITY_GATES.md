@@ -1,20 +1,16 @@
-# Quality Gates — v1.1.0
+# Quality Gates — v1.2.0
 
-G1 Architecture — process architecture, taxonomy, graph, non-edges, Scale/Governor exist.  
-G2 Evidence discipline — evidence policy and claim/contradiction/uncertainty registries exist.  
-G3 Candidate truth model — candidate evidence schema/model exists.  
-G4 Target role model — requirements, importance, hardness, context are separated.  
-G5 Reasoning — evidence → relevance → claim calibration → construction is enforced.  
-G6 Human screening — readability, attention, inference, credibility, bias are audited.  
-G7 Machine interpretation — parsing/retrieval/ranking are separated; fake ATS scores prohibited.  
-G8 Fairness/privacy — sensitive data and discrimination risks are explicit.  
-G9 Root evaluation — adversarial cases and critical rubrics exist.  
-G10 Runtime Skill — root SKILL.md has triggers, boundaries, workflow, completion checks.  
-G11 Document Structure Skill — section/page/typography/PDF architecture exists.  
-G12 Consistency standard — canonical section, hierarchy, terminology, units, and editorial rules exist.  
-G13 Date standard — internal normalization and display rules are separated and validated.  
-G14 Schema/runtime alignment — date validator matches candidate evidence schema.  
-G15 Static repository audit — `python scripts/audit_repository.py` passes.  
-G16 Release honesty — limitations and non-claims are explicit.
-
-Scientific saturation requires a separate systematic-review standard and is not claimed.
+G1 Root architecture — PASS requirement.  
+G2 Evidence discipline — PASS requirement.  
+G3 Candidate truth model — PASS requirement.  
+G4 Target role model — PASS requirement.  
+G5 Target application model — company × vacancy × role × context is explicit.  
+G6 Application targeting Skill — triggers, boundaries, decisions, completion checks exist.  
+G7 Tailoring integrity — no fabrication, title inflation, unsupported skill insertion, culture mimicry, or hidden hard gaps.  
+G8 Evidence mapping — application requirements map to candidate evidence/gaps.  
+G9 Document Structure Skill — structure/PDF system exists.  
+G10 Consistency/date standards — canonical standards exist and runtime snapshots align.  
+G11 Human/machine/factual/fairness audits — present.  
+G12 Evaluation — root, document-structure, and application-targeting adversarial cases exist.  
+G13 Static audit — `python scripts/audit_repository.py` passes.  
+G14 Release honesty — scientific uncertainty and non-claims remain explicit.

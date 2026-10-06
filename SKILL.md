@@ -1,64 +1,71 @@
 ---
 name: cv
-description: Build, tailor, audit, or improve CVs/resumes from real candidate evidence and a target role. Use when the user asks to create, rewrite, tailor, evaluate, diagnose, structure, or consistency-check a CV/resume. Preserve facts, calibrate claims, distinguish human from machine screening, and do not invent achievements, metrics, skills, credentials, dates, or ATS scores.
+description: Build, tailor, audit, or improve CVs/resumes from real candidate evidence and a target application. Use when the user asks to create, rewrite, tailor, personalize, evaluate, diagnose, structure, compare variants, or consistency-check a CV/resume. Preserve facts, calibrate claims, and do not invent achievements, metrics, skills, credentials, dates, fit, or ATS scores.
 ---
 
 # CV
 
 Build CVs as evidence-constrained representations inside a recruitment and selection system.
 
-## 1. Identify the job
+## 1. Classify the request
 
-Classify the request:
+Modes include:
 - create;
-- tailor;
+- tailor/personalize;
 - rewrite;
 - audit;
 - diagnose evidence;
 - analyze target role;
+- analyze target application;
 - compare variants;
-- design/audit document structure;
-- audit editorial/date consistency.
+- structure;
+- consistency audit.
 
 ## 2. Ground candidate reality
 
 Use `candidate_evidence/MODEL.md`.
 
-Never invent:
-- metrics;
-- scope;
-- ownership;
-- responsibilities;
-- tools;
-- outcomes;
-- credentials;
-- dates or date precision.
+Candidate evidence is the master source of truth.
 
-## 3. Model the target role
+Never invent metrics, scope, ownership, responsibilities, tools, outcomes, credentials, dates/date precision, or employer fit.
 
+## 3. Model the target
+
+### Target Role
 Use `target_role/MODEL.md`.
 
-Do not treat the job description as complete truth.
+### Target Application
+For a concrete application, use:
+- `application_targeting/MODEL.md`
+- `skills/cv-application-targeting/SKILL.md`
 
-## 4. Map evidence to requirements
+Target unit:
 
-Use `reasoning/EVIDENCE_ROLE_MAPPING.md`.
+```text
+company × vacancy × target role × context
+```
 
-Do not force a match.
+Do not treat "one company = one CV" as a scientific law.
+
+## 4. Map evidence
+
+Use:
+- `reasoning/EVIDENCE_ROLE_MAPPING.md`
+- `reasoning/APPLICATION_TARGETING.md`
+
+Do not force matches.
 
 ## 5. Calibrate claims
 
 Use `reasoning/CLAIM_CALIBRATION.md`.
 
-Claim strength must not exceed evidence strength.
+Across CV variants, facts and claim ceilings stay stable unless candidate evidence changes.
 
 ## 6. Apply consistency authority
 
-For all final CV/document work, use:
+Use:
 - `standards/CONSISTENCY_STANDARD.md`
 - `standards/DATE_STANDARD.md`
-
-These are authoritative for dates, section identity, hierarchy IDs, units, terminology, metadata, metrics, links, and editorial consistency.
 
 ## 7. Construct the document
 
@@ -66,94 +73,64 @@ Use:
 - `construction/CV_CONSTRUCTION.md`
 - `construction/DOCUMENT_RULES.md`
 
-For full document architecture, load:
+For document structure:
 - `skills/cv-document-structure/SKILL.md`
 
-Do not force a universal one-page rule, one fixed bullet formula, one section order, one visual template, one font category, or unsupported quantification.
+For application-specific tailoring:
+- `skills/cv-application-targeting/SKILL.md`
 
-## 8. Audit human interpretation
-
-Use `audits/HUMAN_SCREENING.md`.
-
-## 9. Audit machine interpretation
-
-Use `audits/MACHINE_SCREENING.md`.
-
-Keep parsing, section detection, extraction, retrieval, ranking, knockout rules, and LLM evaluation separate.
-
-## 10. Factual integrity, fairness, privacy
+## 8. Audit
 
 Use:
+- `audits/HUMAN_SCREENING.md`
+- `audits/MACHINE_SCREENING.md`
 - `audits/FACTUAL_INTEGRITY.md`
 - `audits/FAIRNESS_PRIVACY.md`
 
-No final CV may contain a critical integrity failure.
-
-## 11. Scientific discipline
+## 9. Scientific discipline
 
 Protect:
 
 ```text
 interview success ≠ job-performance validity
-writing quality ≠ capability
-experience duration ≠ competence
-perceived fit ≠ objective fit
-parsing ≠ ranking
-keyword overlap ≠ competence
-quantification ≠ evidence quality
-visual polish ≠ universal effectiveness
-one page ≠ universal optimum
-single-column ≠ universal requirement
-serif/sans-serif category ≠ universal readability ranking
-display precision ≠ factual precision
+role relevance ≠ company flattery
+tailoring ≠ fabrication
+company context ≠ culture mimicry
+terminology alignment ≠ keyword stuffing
+company-specific tailoring association ≠ proven independent causal advantage
+one application-specific variant ≠ total rewrite from zero
 ```
 
-## 12. Output modes
+## 10. Output modes
 
 ### Draft
-Finished CV content.
-
-### Audit
-Critical issues, improvements, evidence gaps, human/machine risks.
+Finished CV.
 
 ### Tailor
-Target-role interpretation, mapping, tailored CV, material gaps.
+Use application-targeting subsystem.
+
+### Audit
+Critical issues, gaps, human/machine risks.
 
 ### Structure
 Use document-structure subsystem.
 
 ### Consistency
-Audit:
-- versions;
-- dates;
-- section identity/labels;
-- hierarchy IDs;
-- locations;
-- technology casing;
-- numbers/metrics;
-- bullet grammar/punctuation;
-- links;
-- page units;
-- column terminology;
-- artifact extraction consistency.
+Use canonical standards.
 
 ### Research
-Supported conclusion, evidence, contradictions, uncertainty, operational consequence.
+Evidence, contradictions, uncertainty, operational consequence.
 
-## 13. Completion checks
+## 11. Completion
 
 Before finalizing:
-- claims trace to evidence;
-- no invented metric/date precision;
-- ownership accurate;
-- chronology internally consistent;
-- canonical date standard applied;
-- canonical section identities stable;
-- unsupported skills absent;
-- hierarchy readable;
-- machine assumptions scoped;
-- final artifact reading order checked when available;
-- editorial consistency checked;
-- sensitive-data risks reviewed.
+- candidate facts are stable;
+- target application is explicit when a concrete vacancy exists;
+- high-priority requirements are mapped;
+- unsupported matches are absent;
+- hard gaps are not hidden;
+- company context is used only when material;
+- claim calibration is preserved;
+- document/consistency audits pass.
 
-A polished CV that fails factual, structural, or editorial consistency is not complete.
+A CV that is highly personalized but factually distorted is a failed CV.

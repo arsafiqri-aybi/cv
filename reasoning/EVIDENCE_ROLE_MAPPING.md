@@ -1,12 +1,11 @@
-# Evidence ↔ Role Mapping v1
+# Evidence ↔ Role / Application Mapping v1.1
 
 ## Mapping record
 
-For every material target requirement, create zero or more candidate evidence links.
-
-Each link should record:
+For every material target requirement, create zero or more candidate evidence links:
 
 ```text
+application_id
 requirement_id
 evidence_id
 match_type
@@ -28,7 +27,7 @@ notes
 
 ## Priority logic
 
-A practical priority is based on multiple dimensions, not a single magic score:
+Conceptually consider:
 
 ```text
 role importance
@@ -38,25 +37,35 @@ role importance
 × recency/context fit
 ```
 
-This expression is conceptual. Do not multiply arbitrary pseudo-precise numbers unless a validated scoring scheme is later defined.
+Do not turn this into arbitrary pseudo-precision.
+
+## Application context
+
+Company/vacancy context may change:
+- requirement importance;
+- terminology;
+- transferability interpretation;
+- evidence salience.
+
+It may not change:
+- candidate facts;
+- ownership;
+- unsupported skill status;
+- claim ceiling.
 
 ## Gap types
 
 - hard-constraint gap;
 - evidence gap;
-- wording gap;
+- wording/terminology gap;
 - provenance gap;
 - transferability gap;
 - recency gap;
+- freshness gap;
 - unknown.
 
 ## Construction consequence
 
-High-priority, well-supported evidence should generally receive more document salience.
+High-priority supported evidence should receive more salience.
 
-But section order remains context-dependent and must also respect:
-- career stage;
-- occupation;
-- document conventions;
-- reader needs;
-- machine parseability.
+Use `reasoning/APPLICATION_TARGETING.md` for variant decisions.

@@ -1,49 +1,30 @@
 # Roadmap
 
-## v1.0 — Foundation release
-
-Completed:
-- research architecture;
-- evidence registries;
-- 77-construct taxonomy;
-- 70-edge graph;
-- 12 protected non-edges;
-- candidate evidence model;
-- target role model;
-- reasoning engine;
-- construction system;
-- human/machine/factual/fairness audits;
-- root runtime Skill;
-- automated validation.
+## v1.0 — Foundation
+Completed.
 
 ## v1.1.0 — Document Structure + Consistency
+Completed.
 
+## v1.2.0 — Application Targeting
 Completed:
-- document-structure research;
-- specialized `cv-document-structure` Skill;
-- semantic section architecture;
-- information-priority architecture;
-- typography/spatial hierarchy;
-- page-length/page-break logic;
-- machine/PDF reading-order rules;
-- 23 document-structure adversarial cases;
-- canonical section IDs;
-- canonical hierarchy IDs;
-- canonical date/chronology standard;
-- repository-wide editorial consistency standard;
-- date-aware candidate schema and validator;
-- release metadata synchronization.
+- application targeting research;
+- target application schema/model;
+- vacancy/role/company-context separation;
+- evidence-target mapping;
+- tailoring decision system;
+- company-context boundary;
+- application-specific variant metadata;
+- specialized runtime Skill;
+- 18 adversarial targeting cases;
+- root routing integration;
+- static audit integration.
 
-## Future evolution
+## Future
 
-Potential future work:
-- systematic literature review;
-- independent recruiter evaluation;
-- production ATS/parser benchmarks;
-- academic CV profile;
-- executive CV profile;
-- creative-role dual-output profiles;
-- jurisdiction-specific conventions;
-- broader localization profiles.
-
-These are future versions, not hidden incomplete v1.1 requirements.
+Potential:
+- independent recruiter testing;
+- systematic tailoring meta-review;
+- real ATS/parser benchmarks;
+- application experiment tracking;
+- jurisdiction/occupation-specific profiles.

@@ -9,7 +9,7 @@ SCRIPTS=ROOT/"scripts"
 sys.path.insert(0,str(SCRIPTS))
 import validate_models
 
-RELEASE_VERSION="1.1.0"
+RELEASE_VERSION="1.2.0"
 
 REQUIRED=[
  "README.md","PROJECT_CONTRACT.md","SKILL.md","EXECUTION_STATUS.md","ROADMAP.md",
@@ -32,6 +32,21 @@ REQUIRED=[
  "skills/cv-document-structure/references/OUTPUT_CONTRACT.md",
  "skills/cv-document-structure/evaluation/cases.json",
  "skills/cv-document-structure/structure-spec.json",
+ "application_targeting/MODEL.md",
+ "schemas/target-application.schema.json",
+ "reasoning/APPLICATION_TARGETING.md",
+ "research/APPLICATION_TARGETING_RESEARCH_V1.md",
+ "skills/cv-application-targeting/SKILL.md",
+ "skills/cv-application-targeting/orchestration/MASTER_PROMPT.md",
+ "skills/cv-application-targeting/orchestration/SCALE.md",
+ "skills/cv-application-targeting/orchestration/GOVERNOR.md",
+ "skills/cv-application-targeting/references/RESEARCH_BASE.md",
+ "skills/cv-application-targeting/references/TARGET_APPLICATION_MODEL.md",
+ "skills/cv-application-targeting/references/TAILORING_RULES.md",
+ "skills/cv-application-targeting/references/COMPANY_CONTEXT.md",
+ "skills/cv-application-targeting/references/OUTPUT_CONTRACT.md",
+ "skills/cv-application-targeting/evaluation/cases.json",
+ "skills/cv-application-targeting/application-target-spec.json",
  "release/RELEASE_MANIFEST.json","release/RELEASE_NOTES.md",
  "release/KNOWN_LIMITATIONS.md","release/QUALITY_GATES.md",
 ]
@@ -89,7 +104,7 @@ def main():
         ]:
             if RELEASE_VERSION not in read(rel):
                 fail(f"{rel} must mention release version {RELEASE_VERSION}",errors)
-        for component in ["document_structure_skill","consistency_standard","date_standard"]:
+        for component in ["document_structure_skill","consistency_standard","date_standard","application_targeting_skill","target_application_model","application_target_schema"]:
             if not manifest.get("components",{}).get(component):
                 fail(f"manifest must declare {component}",errors)
     except Exception as exc:
@@ -132,6 +147,25 @@ def main():
                 fail(f"missing consistency case {needed}",errors)
     except Exception as exc:
         fail(f"document-structure evaluation error: {exc}",errors)
+
+    # Application-targeting subsystem
+    try:
+        ats=json.loads(read("skills/cv-application-targeting/application-target-spec.json"))
+        if ats.get("target_unit")!=["company","vacancy","target_role","context"]:
+            fail("application target unit drift",errors)
+        required_actions={"SELECT","OMIT","REORDER","EMPHASIZE","TERMINOLOGY_ALIGN","CONTEXTUALIZE","SECTION_PRIORITY"}
+        if set(ats.get("allowed_tailoring_actions",[]))!=required_actions:
+            fail("application tailoring action set drift",errors)
+        at_cases=json.loads(read("skills/cv-application-targeting/evaluation/cases.json"))
+        if len(at_cases.get("cases",[]))<18:
+            fail("application-targeting skill needs >=18 adversarial cases",errors)
+        app_schema=json.loads(read("schemas/target-application.schema.json"))
+        props=app_schema.get("properties",{})
+        for key in ["application_id","targeting_level","company_name","vacancy_title","target_role_id","sources"]:
+            if key not in props:
+                fail(f"target-application schema missing {key}",errors)
+    except Exception as exc:
+        fail(f"application-targeting validation error: {exc}",errors)
 
     # Candidate date schema + runtime self-test
     try:

@@ -215,8 +215,9 @@ Do not alternate between "two column", "2-column", and "dual column" inside the 
 
 ## 13. Versioning
 
-Repository release uses Semantic Versioning-like labels:
-- current release: `1.1.0`
+Repository release uses Semantic Versioning-like labels.
+
+Current release version is authoritative in `release/RELEASE_MANIFEST.json`; do not hardcode it elsewhere as a source of truth.
 
 Component research/taxonomy versions may remain lower when their scientific content has not changed.
 
@@ -239,7 +240,19 @@ For consistency conflicts:
 
 If an example conflicts with the standard, the example is wrong.
 
-## 15. Final consistency gate
+## 15. Application variant consistency
+
+Across application-specific CV variants:
+- candidate facts remain invariant;
+- official titles remain invariant unless evidence itself changes;
+- claim ceiling remains invariant unless evidence changes;
+- normalized dates remain invariant;
+- display/order/detail may change;
+- terminology may change only when semantically equivalent and supported.
+
+Each serious variant should be traceable to a `target_application`.
+
+## 16. Final consistency gate
 
 Before release/final artifact, audit:
 - version labels;

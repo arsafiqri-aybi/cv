@@ -1,0 +1,41 @@
+{
+  "version": "1.0",
+  "release_compatibility": "1.x",
+  "target_unit": [
+    "company",
+    "vacancy",
+    "target_role",
+    "context"
+  ],
+  "targeting_levels": {
+    "T0_general": "No concrete vacancy",
+    "T1_role_family": "Role family known, no concrete vacancy",
+    "T2_vacancy": "Concrete vacancy/role source",
+    "T3_vacancy_company_context": "Concrete vacancy plus material verified company context"
+  },
+  "allowed_tailoring_actions": [
+    "SELECT",
+    "OMIT",
+    "REORDER",
+    "EMPHASIZE",
+    "TERMINOLOGY_ALIGN",
+    "CONTEXTUALIZE",
+    "SECTION_PRIORITY"
+  ],
+  "forbidden_actions": [
+    "FABRICATE_FACT",
+    "INVENT_SKILL",
+    "TITLE_INFLATION",
+    "FAKE_COMPANY_FAMILIARITY",
+    "CULTURE_MIMICRY",
+    "KEYWORD_STUFFING",
+    "HIDE_HARD_CONSTRAINT"
+  ],
+  "invariants": [
+    "candidate evidence remains authoritative",
+    "claim strength does not increase without stronger evidence",
+    "company specificity is secondary to role/vacancy relevance",
+    "different vacancies at one company may require different variants",
+    "one variant does not require a total rewrite"
+  ]
+}

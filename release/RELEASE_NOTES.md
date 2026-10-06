@@ -1,54 +1,54 @@
-# CV v1.1.0 — Release Notes
+# CV v1.2.0 — Release Notes
 
-## Release
+## New subsystem: Application Targeting
 
-**PROJECT_COMPLETE_V1 — 1.x release line**
+v1.2.0 adds a research-grounded application-targeting Skill.
 
-v1.1.0 adds the CV Document Structure subsystem and a repository-wide consistency layer.
+Canonical target:
 
-## New in v1.1.0
+```text
+TARGET APPLICATION
+=
+company × vacancy × role × context
+```
 
-- research-grounded `cv-document-structure` skill;
-- semantic section architecture;
-- page architecture;
-- typography/layout rules;
-- PDF reading-order and parser checks;
-- canonical section IDs;
-- canonical hierarchy IDs;
-- canonical date/chronology standard;
-- editorial consistency standard;
-- stricter candidate-date schema;
-- date-aware model validator;
-- document-structure adversarial evaluation expanded to 23 cases;
-- static audit extended to cross-file consistency.
+## Shipped
 
-## Canonical standards
+- `application_targeting/MODEL.md`
+- `schemas/target-application.schema.json`
+- `reasoning/APPLICATION_TARGETING.md`
+- `research/APPLICATION_TARGETING_RESEARCH_V1.md`
+- `skills/cv-application-targeting/SKILL.md`
+- Prompting/Scale/Governor orchestration
+- targeting/tailoring/company-context references
+- 18 adversarial targeting cases
+- machine-readable application-target spec
+- root CV routing integration
+- static audit integration
 
-- `standards/CONSISTENCY_STANDARD.md`
-- `standards/DATE_STANDARD.md`
+## Scientific correction
 
-## Versioning rule
+The project does not claim:
+`one company = one completely unique CV`.
 
-Repository release version is `1.1.0`.
+Instead:
+- role/vacancy relevance is the primary targeting layer;
+- company context is secondary and conditional;
+- company-focused tailoring has some observational association with interview outcomes, but independent causal benefit is not established strongly enough to make it a universal rule.
 
-Component research/taxonomy versions can remain `v1.0` when their scientific content has not changed. Component version and release version are not the same concept.
+## Invariant
 
-## Protected non-rules
+Application variants can change:
+- selection;
+- order;
+- salience;
+- detail;
+- supported terminology.
 
-The release still rejects universal claims such as:
-- exactly one page;
-- exactly two pages;
-- one fixed section order;
-- single-column only;
-- multi-column always fails ATS;
-- serif only;
-- sans-serif only.
-
-## Non-claims
-
-This release does not claim:
-- scientific saturation;
-- universal ATS behavior;
-- guaranteed callbacks;
-- universal legal/cultural applicability;
-- independent recruiter validation.
+They cannot change:
+- candidate facts;
+- evidence provenance;
+- ownership;
+- chronology;
+- unsupported skill status;
+- claim ceiling.

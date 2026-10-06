@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CV Target Application",
+  "type": "object",
+  "required": [
+    "application_id",
+    "targeting_level",
+    "company_name",
+    "vacancy_title",
+    "target_role_id",
+    "sources"
+  ],
+  "properties": {
+    "application_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "targeting_level": {
+      "enum": [
+        "T0_general",
+        "T1_role_family",
+        "T2_vacancy",
+        "T3_vacancy_company_context"
+      ]
+    },
+    "company_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "vacancy_title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "vacancy_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "target_role_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "location": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "work_arrangement": {
+      "enum": [
+        "onsite",
+        "hybrid",
+        "remote",
+        "unknown"
+      ]
+    },
+    "language_locale": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "application_channel": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_type",
+          "description"
+        ],
+        "properties": {
+          "source_type": {
+            "enum": [
+              "job_posting",
+              "company_careers",
+              "recruiter_message",
+              "user_context",
+              "company_source",
+              "other"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "reference": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "observed_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^\\d{4}(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\\d|3[01]))?)?)?$"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "company_context": {
+      "type": "object",
+      "properties": {
+        "industry_domain": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "products_services": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "customer_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "technology_context": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "regulatory_context": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "material_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "hard_constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "candidate_evidence_snapshot": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "generated_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$"
+    }
+  },
+  "additionalProperties": false
+}

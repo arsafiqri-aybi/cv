@@ -1,6 +1,6 @@
 {
   "project": "cv",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "release_line": "1.x",
   "release_status": "PROJECT_COMPLETE_V1",
   "release_date": "2026-10-06",
@@ -13,7 +13,8 @@
     "non_edges": 12,
     "root_adversarial_cases": 18,
     "document_structure_adversarial_cases": 23,
-    "rubric_dimensions": 10
+    "rubric_dimensions": 10,
+    "application_targeting_adversarial_cases": 18
   },
   "github_actions": {
     "status": "INSTALLED_AND_PASSING",
@@ -48,9 +49,14 @@
     "evaluation_suite": true,
     "runtime_skill": true,
     "release_controls": true,
-    "github_actions_validation": true
+    "github_actions_validation": true,
+    "application_targeting_skill": true,
+    "target_application_model": true,
+    "application_target_schema": true
   },
   "canonical_consistency_source": "standards/CONSISTENCY_STANDARD.md",
   "canonical_date_source": "standards/DATE_STANDARD.md",
-  "limitations_file": "release/KNOWN_LIMITATIONS.md"
+  "limitations_file": "release/KNOWN_LIMITATIONS.md",
+  "canonical_target_application_source": "application_targeting/MODEL.md",
+  "canonical_application_targeting_skill": "skills/cv-application-targeting/SKILL.md"
 }

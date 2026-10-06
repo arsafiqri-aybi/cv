@@ -1,57 +1,31 @@
-# Evaluation Status — v1.1.0
+# Evaluation Status — v1.2.0
 
-## Root system
-
-Static verification: **PASS** on prior validated release state.
-
-Root evaluation architecture:
+## Root
 - 18 adversarial cases
 - 10 rubric dimensions
 
-Critical dimensions include:
-- factual fidelity
-- claim calibration
-- fairness/privacy
-- consistency
+## Document Structure
+- 23 adversarial cases
 
-## Document Structure subsystem
+## Application Targeting
+- 18 adversarial cases
 
-Adversarial coverage:
-- 23 cases
+Coverage includes:
+- same company/different roles;
+- same role/different companies;
+- unsupported required tools;
+- hard-constraint gaps;
+- company-values mimicry;
+- keyword stuffing;
+- stale vacancies;
+- role-title inflation;
+- career change;
+- company-specific technology without candidate evidence;
+- synonym/terminology alignment;
+- feedback causal overreach.
 
-Coverage now includes:
-- page length;
-- section ordering;
-- multi-column extraction;
-- typography compression;
-- academic CV exception;
-- creative labels;
-- date-format drift;
-- ongoing-date normalization;
-- unknown date precision;
-- section-label drift;
-- bullet punctuation/tense;
-- technology casing;
-- location formatting.
+## Deterministic validation
 
-## Cross-file consistency
+Static audit verifies required targeting files/spec/schema/evaluation coverage and release integration.
 
-Automated audit checks:
-- release version synchronization;
-- canonical standard snapshot equality;
-- canonical section IDs;
-- hierarchy IDs;
-- measurement-unit field names;
-- date separator policy;
-- candidate-date schema fields;
-- runtime date-validator behavior.
-
-## Behavioral evaluation limitation
-
-Independent recruiter/model pass-rate is **NOT_CLAIMED**.
-
-The repository provides adversarial specifications and deterministic structural checks, not external recruiter validation.
-
-## GitHub Actions
-
-`.github/workflows/validate.yml` runs the consistency-aware repository audit on every push to main and pull request.
+Independent recruiter/model pass-rate remains **NOT_CLAIMED**.
