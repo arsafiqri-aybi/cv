@@ -4,21 +4,19 @@
 
 Status: **PASS**
 
-Executed against persisted repository content.
-
 Checks:
-- required release components exist in repository tree;
+- required release components exist;
 - graph JSON parses;
 - node IDs unique;
 - all edge source/target IDs resolve;
-- all protected non-edge source/target IDs resolve;
-- node/edge/non-edge declared counts match content;
-- evaluation-case count matches content;
-- factual_fidelity is a critical rubric dimension;
-- claim_calibration is a critical rubric dimension;
-- fairness_privacy is a critical rubric dimension;
-- consistency is a critical rubric dimension;
-- release manifest does not claim scientific saturation.
+- all protected non-edge IDs resolve;
+- declared counts match;
+- evaluation-case count matches;
+- factual_fidelity is critical;
+- claim_calibration is critical;
+- fairness_privacy is critical;
+- consistency is critical;
+- scientific saturation is not claimed.
 
 Snapshot:
 - nodes: 77
@@ -27,38 +25,43 @@ Snapshot:
 - adversarial cases: 18
 - rubric dimensions: 10
 
+## GitHub Actions
+
+Status: **INSTALLED_AND_PASSING**
+
+Workflow:
+`.github/workflows/validate.yml`
+
+First run:
+- run ID: 37392045537
+- job ID: 112039162963
+- conclusion: **success**
+
+Validated steps:
+1. checkout repository;
+2. set up Python 3.12;
+3. compile both validator scripts;
+4. run repository static audit.
+
 ## Behavioral evaluation
 
-### Designed
-18 adversarial cases cover:
+18 adversarial test definitions cover:
 - weak match;
 - career change;
-- students;
+- student/no experience;
 - team attribution;
-- missing metrics;
-- fact conflicts;
+- absent metrics;
+- conflicting facts;
 - keyword stuffing;
 - unsupported skills;
-- creative layouts;
-- academic CVs;
-- sensitive personal data;
+- creative layout;
+- academic CV;
+- sensitive data;
 - unknown ATS;
-- knockout constraints;
-- AI-polished writing;
+- hard constraints;
+- AI-polished prose;
 - noisy rejection feedback;
 - LLM screening;
 - no-target-role conditions.
 
-### Not claimed
-No independent external model, recruiter panel, or blinded evaluator was run in this release.
-
-Therefore:
-- behavioral test **coverage is present**;
-- independent behavioral pass-rate is **NOT_CLAIMED**.
-
-## CI
-
-GitHub Actions workflow installation was attempted but the GitHub Operator connection returned:
-`workflow_writes_not_enabled`.
-
-Deterministic audit scripts are retained in the repository for execution in another environment.
+Independent recruiter/model pass-rate is **NOT_CLAIMED**.

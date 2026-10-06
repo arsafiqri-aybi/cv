@@ -28,66 +28,46 @@ Independent external/human behavioral evaluation is **NOT_CLAIMED**.
 
 ## Verified release snapshot
 
-Static release audit executed against persisted repository content:
-
 - 77 graph nodes
 - 70 typed graph edges
 - 12 protected non-edges
 - 18 adversarial evaluation cases
 - 10 evaluation dimensions
+
+Static repository audit: **PASS**
+
+Critical gates:
 - unique node IDs: PASS
 - edge referential integrity: PASS
 - non-edge referential integrity: PASS
-- factual fidelity critical gate: PASS
-- claim calibration critical gate: PASS
-- fairness/privacy critical gate: PASS
-- consistency critical gate: PASS
-- release scientific-saturation flag = false: PASS
+- factual fidelity: PASS
+- claim calibration: PASS
+- fairness/privacy: PASS
+- consistency: PASS
 
-## Workflow limitation
+## GitHub Actions validation
 
-GitHub Operator rejected workflow-file creation with:
+Workflow installed:
 
-`workflow_writes_not_enabled`
+`.github/workflows/validate.yml`
 
-Therefore GitHub Actions CI was not installed.
+Triggers:
+- push to `main`
+- pull requests
 
-This does not invalidate the repository architecture or static audit. The repository includes:
+First workflow run:
+- workflow: Validate CV System
+- run ID: 37392045537
+- job: static-audit
+- job ID: 112039162963
+- result: **SUCCESS**
+
+The workflow compiles:
 - `scripts/audit_repository.py`
 - `scripts/validate_models.py`
 
-for deterministic validation in environments where execution is available.
-
-## Accepted v1 architecture
-
-```text
-WORK / ROLE REALITY
-↕
-CANDIDATE REALITY
-↓
-EVIDENCE
-↓
-SIGNALING
-↓
-RELEVANCE / FIT
-↓
-DOCUMENT REPRESENTATION
-↙                     ↘
-HUMAN INTERPRETATION    MACHINE INTERPRETATION
-↘                     ↙
-SCREENING OUTCOME
-↓
-FEEDBACK
-```
-
-Cross-cutting:
-- validity / reliability;
-- fairness / discrimination;
-- privacy;
-- provenance / uncertainty;
-- source freshness;
-- context boundaries;
-- causal identification.
+and runs:
+- `python scripts/audit_repository.py`
 
 ## Completion meaning
 
@@ -101,7 +81,7 @@ PROJECT_COMPLETE_V1 means the system is architecturally and operationally ready 
 - audit machine parseability assumptions;
 - audit factual integrity;
 - review fairness/privacy risks;
-- package behavior through the CV Skill.
+- validate repository integrity automatically on GitHub.
 
 It does **not** mean:
 - every CV question is scientifically settled;

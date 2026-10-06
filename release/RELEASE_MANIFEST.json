@@ -24,9 +24,17 @@
       "scientific saturation false"
     ]
   },
-  "workflow_installation": {
-    "status": "NOT_INSTALLED",
-    "reason": "workflow_writes_not_enabled"
+  "github_actions": {
+    "status": "INSTALLED_AND_PASSING",
+    "workflow": ".github/workflows/validate.yml",
+    "workflow_name": "Validate CV System",
+    "first_run_id": 37392045537,
+    "first_job_id": 112039162963,
+    "first_job_conclusion": "success",
+    "triggers": [
+      "push to main",
+      "pull_request"
+    ]
   },
   "components": {
     "orchestration": true,
@@ -43,7 +51,8 @@
     "fairness_audit": true,
     "evaluation_suite": true,
     "runtime_skill": true,
-    "release_controls": true
+    "release_controls": true,
+    "github_actions_validation": true
   },
   "limitations_file": "release/KNOWN_LIMITATIONS.md"
 }
