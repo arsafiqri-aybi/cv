@@ -1,0 +1,4 @@
+interface:
+  display_name: "CV Candidate Discovery"
+  short_description: "Interview candidates once, remember evidence, and ask only useful gaps"
+  default_prompt: "Use the CV Candidate Discovery skill to interview me efficiently, remember what I already answered, stop each topic when the evidence is sufficient, and build my reusable Master Candidate Evidence Base."
