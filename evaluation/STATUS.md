@@ -1,67 +1,57 @@
-# Evaluation Status — v1.0
+# Evaluation Status — v1.1.0
 
-## Static verification
+## Root system
 
-Status: **PASS**
+Static verification: **PASS** on prior validated release state.
 
-Checks:
-- required release components exist;
-- graph JSON parses;
-- node IDs unique;
-- all edge source/target IDs resolve;
-- all protected non-edge IDs resolve;
-- declared counts match;
-- evaluation-case count matches;
-- factual_fidelity is critical;
-- claim_calibration is critical;
-- fairness_privacy is critical;
-- consistency is critical;
-- scientific saturation is not claimed.
+Root evaluation architecture:
+- 18 adversarial cases
+- 10 rubric dimensions
 
-Snapshot:
-- nodes: 77
-- edges: 70
-- non-edges: 12
-- adversarial cases: 18
-- rubric dimensions: 10
+Critical dimensions include:
+- factual fidelity
+- claim calibration
+- fairness/privacy
+- consistency
+
+## Document Structure subsystem
+
+Adversarial coverage:
+- 23 cases
+
+Coverage now includes:
+- page length;
+- section ordering;
+- multi-column extraction;
+- typography compression;
+- academic CV exception;
+- creative labels;
+- date-format drift;
+- ongoing-date normalization;
+- unknown date precision;
+- section-label drift;
+- bullet punctuation/tense;
+- technology casing;
+- location formatting.
+
+## Cross-file consistency
+
+Automated audit checks:
+- release version synchronization;
+- canonical standard snapshot equality;
+- canonical section IDs;
+- hierarchy IDs;
+- measurement-unit field names;
+- date separator policy;
+- candidate-date schema fields;
+- runtime date-validator behavior.
+
+## Behavioral evaluation limitation
+
+Independent recruiter/model pass-rate is **NOT_CLAIMED**.
+
+The repository provides adversarial specifications and deterministic structural checks, not external recruiter validation.
 
 ## GitHub Actions
 
-Status: **INSTALLED_AND_PASSING**
-
-Workflow:
-`.github/workflows/validate.yml`
-
-First run:
-- run ID: 37392045537
-- job ID: 112039162963
-- conclusion: **success**
-
-Validated steps:
-1. checkout repository;
-2. set up Python 3.12;
-3. compile both validator scripts;
-4. run repository static audit.
-
-## Behavioral evaluation
-
-18 adversarial test definitions cover:
-- weak match;
-- career change;
-- student/no experience;
-- team attribution;
-- absent metrics;
-- conflicting facts;
-- keyword stuffing;
-- unsupported skills;
-- creative layout;
-- academic CV;
-- sensitive data;
-- unknown ATS;
-- hard constraints;
-- AI-polished prose;
-- noisy rejection feedback;
-- LLM screening;
-- no-target-role conditions.
-
-Independent recruiter/model pass-rate is **NOT_CLAIMED**.
+`.github/workflows/validate.yml` runs the consistency-aware repository audit on every push to main and pull request.

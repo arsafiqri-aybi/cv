@@ -41,9 +41,7 @@ Runs on:
 - push to main
 - pull requests
 
-The latest verified workflow before this consistency patch was run `37396170619`, conclusion **SUCCESS**.
-
-This commit triggers a new validation run.
+Consistency audit workflow run `37398470629`: **SUCCESS**.
 
 ## Important version distinction
 

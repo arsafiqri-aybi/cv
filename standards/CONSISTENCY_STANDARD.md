@@ -147,7 +147,11 @@ Examples in English-style formatting:
 - `20%`
 - `1,250 users`
 - `$1.2M`
-- `Rp85,000` only if that is the chosen locale/style.
+
+Example in an Indonesian-localized style:
+- `Rp85.000`
+
+Do not mix locale conventions inside one CV.
 
 Do not convert currencies or units unless the conversion is requested and sourced.
 

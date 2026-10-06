@@ -7,7 +7,7 @@
   "scientific_saturation_claimed": false,
   "independent_behavioral_evaluation_claimed": false,
   "static_release_audit": {
-    "status": "PASS_AT_PREVIOUS_RELEASE; REVALIDATED_BY_GITHUB_ACTIONS_ON_EACH_PUSH",
+    "status": "PASS",
     "nodes": 77,
     "edges": 70,
     "non_edges": 12,
@@ -19,15 +19,15 @@
     "status": "INSTALLED_AND_PASSING",
     "workflow": ".github/workflows/validate.yml",
     "workflow_name": "Validate CV System",
-    "latest_verified_before_1_1_consistency_patch": {
-      "run_id": 37396170619,
-      "job_id": 112052538773,
-      "conclusion": "success"
-    },
     "triggers": [
       "push to main",
       "pull_request"
-    ]
+    ],
+    "latest_verified_consistency_audit": {
+      "run_id": 37398470629,
+      "conclusion": "success",
+      "head_sha": "2aa5316fd600b435ad74950178eeee20d64bd4c9"
+    }
   },
   "components": {
     "orchestration": true,

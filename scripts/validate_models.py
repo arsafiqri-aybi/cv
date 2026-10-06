@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Lightweight structural validator for CV project JSON instances."""
+import calendar
 import json
 import re
 import sys
@@ -9,13 +10,32 @@ ALLOWED_OWNERSHIP={"sole","primary","shared","supporting","unknown"}
 ALLOWED_CONFIDENCE={"high","medium","low"}
 ALLOWED_CLAIM={"direct","bounded","descriptive_only","do_not_use"}
 ALLOWED_IMPORTANCE={"critical","high","medium","low","unknown"}
-DATE_RE=re.compile(r"^\d{4}(?:-\d{2}(?:-\d{2})?)?$")
+DATE_RE=re.compile(r"^(\d{4})(?:-(\d{2})(?:-(\d{2}))?)?$")
 
 def load(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 def valid_date(value):
-    return value is None or (isinstance(value,str) and DATE_RE.fullmatch(value))
+    if value is None:
+        return True
+    if not isinstance(value,str):
+        return False
+    m=DATE_RE.fullmatch(value)
+    if not m:
+        return False
+    year=int(m.group(1))
+    month=int(m.group(2)) if m.group(2) else None
+    day=int(m.group(3)) if m.group(3) else None
+    if year < 1:
+        return False
+    if month is not None and not 1 <= month <= 12:
+        return False
+    if day is not None:
+        if month is None:
+            return False
+        if not 1 <= day <= calendar.monthrange(year,month)[1]:
+            return False
+    return True
 
 def validate_candidate(data):
     errors=[]
@@ -47,11 +67,9 @@ def validate_candidate(data):
             errors.append(f"{p}.allowed_claim_strength invalid")
         for field in ("start_date","end_date"):
             if not valid_date(item.get(field)):
-                errors.append(f"{p}.{field} must be YYYY, YYYY-MM, YYYY-MM-DD, or null")
+                errors.append(f"{p}.{field} must be a real YYYY, YYYY-MM, YYYY-MM-DD date, or null")
         if item.get("is_current") is True and item.get("end_date") is not None:
             errors.append(f"{p}.end_date must be null when is_current=true")
-        if isinstance(item.get("end_date"),str) and item["end_date"].lower() in {"present","current","sekarang"}:
-            errors.append(f"{p}.end_date must be normalized; use null + is_current=true")
     return errors
 
 def validate_role(data):
