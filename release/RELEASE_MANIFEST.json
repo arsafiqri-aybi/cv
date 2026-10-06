@@ -29,6 +29,11 @@
       "run_id": 37398470629,
       "conclusion": "success",
       "head_sha": "2aa5316fd600b435ad74950178eeee20d64bd4c9"
+    },
+    "latest_verified_candidate_discovery_audit": {
+      "run_id": 37401483901,
+      "conclusion": "success",
+      "head_sha": "b1d8f3a73ce87b6b8cc1cc58767c3b1b46c2f22a"
     }
   },
   "components": {
