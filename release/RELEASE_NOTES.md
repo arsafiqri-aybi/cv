@@ -1,54 +1,19 @@
-# CV v1.2.0 — Release Notes
+# CV v1.3.0 — Release Notes
 
-## New subsystem: Application Targeting
+## Candidate Discovery Interview
 
-v1.2.0 adds a research-grounded application-targeting Skill.
+Adds a stateful evidence-acquisition interview system designed to gather enough CV evidence without repeatedly asking what the candidate already answered or over-interviewing one topic.
 
-Canonical target:
+Shipped:
+- Master Discovery and Target Delta modes;
+- coverage states UNSEEN/DISCOVERED/PARTIAL/CV_USABLE/TARGET_READY/BLOCKED;
+- P0-P3 gap priority model;
+- semantic intent deduplication;
+- bounded probing;
+- persistent interview state schema;
+- 24 adversarial cases;
+- Prompting / Scale / Governor;
+- root Skill routing;
+- automated audit coverage.
 
-```text
-TARGET APPLICATION
-=
-company × vacancy × role × context
-```
-
-## Shipped
-
-- `application_targeting/MODEL.md`
-- `schemas/target-application.schema.json`
-- `reasoning/APPLICATION_TARGETING.md`
-- `research/APPLICATION_TARGETING_RESEARCH_V1.md`
-- `skills/cv-application-targeting/SKILL.md`
-- Prompting/Scale/Governor orchestration
-- targeting/tailoring/company-context references
-- 18 adversarial targeting cases
-- machine-readable application-target spec
-- root CV routing integration
-- static audit integration
-
-## Scientific correction
-
-The project does not claim:
-`one company = one completely unique CV`.
-
-Instead:
-- role/vacancy relevance is the primary targeting layer;
-- company context is secondary and conditional;
-- company-focused tailoring has some observational association with interview outcomes, but independent causal benefit is not established strongly enough to make it a universal rule.
-
-## Invariant
-
-Application variants can change:
-- selection;
-- order;
-- salience;
-- detail;
-- supported terminology.
-
-They cannot change:
-- candidate facts;
-- evidence provenance;
-- ownership;
-- chronology;
-- unsupported skill status;
-- claim ceiling.
+The exact stop states and two-follow-up default are engineering decisions informed by adjacent interview and respondent-burden research, not universal scientific constants.

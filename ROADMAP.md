@@ -7,24 +7,23 @@ Completed.
 Completed.
 
 ## v1.2.0 — Application Targeting
+Completed.
+
+## v1.3.0 — Candidate Discovery Interview
 Completed:
-- application targeting research;
-- target application schema/model;
-- vacancy/role/company-context separation;
-- evidence-target mapping;
-- tailoring decision system;
-- company-context boundary;
-- application-specific variant metadata;
-- specialized runtime Skill;
-- 18 adversarial targeting cases;
-- root routing integration;
-- static audit integration.
+- reusable Master Candidate Evidence interview;
+- adaptive questioning;
+- semantic question deduplication;
+- bounded probing;
+- evidence sufficiency states;
+- target-delta follow-up;
+- persistent interview session state;
+- 24 adversarial cases;
+- root routing and automated validation.
 
 ## Future
-
 Potential:
-- independent recruiter testing;
-- systematic tailoring meta-review;
-- real ATS/parser benchmarks;
-- application experiment tracking;
-- jurisdiction/occupation-specific profiles.
+- real-user usability tests;
+- burden/time benchmarking;
+- recall-prompt experiments;
+- independent recruiter evaluation.

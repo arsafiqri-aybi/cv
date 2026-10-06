@@ -1,6 +1,6 @@
 {
   "project": "cv",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "release_line": "1.x",
   "release_status": "PROJECT_COMPLETE_V1",
   "release_date": "2026-10-06",
@@ -14,7 +14,8 @@
     "root_adversarial_cases": 18,
     "document_structure_adversarial_cases": 23,
     "rubric_dimensions": 10,
-    "application_targeting_adversarial_cases": 18
+    "application_targeting_adversarial_cases": 18,
+    "candidate_discovery_adversarial_cases": 24
   },
   "github_actions": {
     "status": "INSTALLED_AND_PASSING",
@@ -52,11 +53,15 @@
     "github_actions_validation": true,
     "application_targeting_skill": true,
     "target_application_model": true,
-    "application_target_schema": true
+    "application_target_schema": true,
+    "candidate_discovery_skill": true,
+    "interview_session_schema": true,
+    "interview_sufficiency_engine": true
   },
   "canonical_consistency_source": "standards/CONSISTENCY_STANDARD.md",
   "canonical_date_source": "standards/DATE_STANDARD.md",
   "limitations_file": "release/KNOWN_LIMITATIONS.md",
   "canonical_target_application_source": "application_targeting/MODEL.md",
-  "canonical_application_targeting_skill": "skills/cv-application-targeting/SKILL.md"
+  "canonical_application_targeting_skill": "skills/cv-application-targeting/SKILL.md",
+  "canonical_candidate_discovery_skill": "skills/cv-candidate-discovery/SKILL.md"
 }

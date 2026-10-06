@@ -1,23 +1,20 @@
-# Known Limitations — v1.2.0
+# Known Limitations — v1.3.0
+
+## Candidate Discovery
+- No dedicated validated scientific standard exists for CV evidence-acquisition interviewing.
+- The subsystem adapts structured-interview and respondent-burden research.
+- Coverage states, P0-P3 priorities, and the two-follow-up default are engineering choices.
+- Candidate recall can be incomplete or inaccurate.
+- User-reported evidence may remain unverified.
+- Sufficiency means CV-usable, not exhaustive.
+
+## Application Targeting
+- Company context may be incomplete or stale.
+- Independent causal benefit of company-focused tailoring remains uncertain.
 
 ## Scientific
 - Literature mapping is breadth-first, not a systematic review.
 - Scientific saturation is not claimed.
-- Independent causal benefit of company-focused tailoring remains uncertain.
-- Modern AI/ATS behavior is system-specific.
-- Real-world screening outcomes are multi-causal.
 
-## Application targeting
-- Company context may be incomplete or stale.
-- Job descriptions are imperfect representations of actual work.
-- Application variants cannot compensate for genuine hard-constraint/evidence gaps.
-- Company values/culture language is not treated as objective candidate fit.
-- A targeted CV cannot guarantee interview or offer outcomes.
-
-## Document structure
-- Typography ranges are engineering defaults.
-- Multi-column robustness must be tested on the actual artifact.
-- Production parser behavior varies.
-
-## Evaluation
-- Adversarial tests are internal behavioral specifications, not independent recruiter validation.
+## Runtime
+- The system cannot infer missing facts safely or guarantee interviews/offers.

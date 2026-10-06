@@ -1,4 +1,4 @@
-# Evaluation Status — v1.2.0
+# Evaluation Status — v1.3.0
 
 ## Root
 - 18 adversarial cases
@@ -10,22 +10,9 @@
 ## Application Targeting
 - 18 adversarial cases
 
-Coverage includes:
-- same company/different roles;
-- same role/different companies;
-- unsupported required tools;
-- hard-constraint gaps;
-- company-values mimicry;
-- keyword stuffing;
-- stale vacancies;
-- role-title inflation;
-- career change;
-- company-specific technology without candidate evidence;
-- synonym/terminology alignment;
-- feedback causal overreach.
+## Candidate Discovery
+- 24 adversarial cases
 
-## Deterministic validation
+Candidate Discovery coverage includes repeat prevention, semantic deduplication, contradictions, CV-usability stop rules, no-metric handling, target-delta follow-up, rich-answer extraction, bounded probing, fatigue, corrections, provenance, date precision, team ownership, and prior-state reuse.
 
-Static audit verifies required targeting files/spec/schema/evaluation coverage and release integration.
-
-Independent recruiter/model pass-rate remains **NOT_CLAIMED**.
+These are behavioral specifications and deterministic repository checks, not independent scientific validation.

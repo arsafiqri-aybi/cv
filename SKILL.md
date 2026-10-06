@@ -10,6 +10,7 @@ Build CVs as evidence-constrained representations inside a recruitment and selec
 ## 1. Classify the request
 
 Modes include:
+- candidate discovery interview;
 - create;
 - tailor/personalize;
 - rewrite;
@@ -23,7 +24,11 @@ Modes include:
 
 ## 2. Ground candidate reality
 
-Use `candidate_evidence/MODEL.md`.
+For conversational evidence collection, use:
+- `skills/cv-candidate-discovery/SKILL.md`
+
+For normalized evidence, use:
+- `candidate_evidence/MODEL.md`.
 
 Candidate evidence is the master source of truth.
 
@@ -103,6 +108,9 @@ one application-specific variant ≠ total rewrite from zero
 
 ## 10. Output modes
 
+### Discovery
+Use the Candidate Discovery subsystem to build or update the reusable Master Candidate Evidence Base without repeating known information.
+
 ### Draft
 Finished CV.
 
@@ -125,6 +133,7 @@ Evidence, contradictions, uncertainty, operational consequence.
 
 Before finalizing:
 - candidate facts are stable;
+- reusable evidence was collected without knowingly repeating answered intents;
 - target application is explicit when a concrete vacancy exists;
 - high-priority requirements are mapped;
 - unsupported matches are absent;

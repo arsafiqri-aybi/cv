@@ -9,7 +9,7 @@ SCRIPTS=ROOT/"scripts"
 sys.path.insert(0,str(SCRIPTS))
 import validate_models
 
-RELEASE_VERSION="1.2.0"
+RELEASE_VERSION="1.3.0"
 
 REQUIRED=[
  "README.md","PROJECT_CONTRACT.md","SKILL.md","EXECUTION_STATUS.md","ROADMAP.md",
@@ -49,6 +49,23 @@ REQUIRED=[
  "skills/cv-application-targeting/application-target-spec.json",
  "skills/cv-application-targeting/references/README.md",
  "skills/cv-application-targeting/agents/openai.yaml",
+ "candidate_discovery/MODEL.md",
+ "schemas/candidate-interview-session.schema.json",
+ "research/CANDIDATE_DISCOVERY_INTERVIEW_RESEARCH_V1.md",
+ "skills/cv-candidate-discovery/SKILL.md",
+ "skills/cv-candidate-discovery/orchestration/MASTER_PROMPT.md",
+ "skills/cv-candidate-discovery/orchestration/SCALE.md",
+ "skills/cv-candidate-discovery/orchestration/GOVERNOR.md",
+ "skills/cv-candidate-discovery/references/README.md",
+ "skills/cv-candidate-discovery/references/RESEARCH_BASE.md",
+ "skills/cv-candidate-discovery/references/COVERAGE_AND_SUFFICIENCY.md",
+ "skills/cv-candidate-discovery/references/QUESTION_POLICY.md",
+ "skills/cv-candidate-discovery/references/INTERVIEW_MEMORY.md",
+ "skills/cv-candidate-discovery/references/INTERVIEW_FLOW.md",
+ "skills/cv-candidate-discovery/references/OUTPUT_CONTRACT.md",
+ "skills/cv-candidate-discovery/evaluation/cases.json",
+ "skills/cv-candidate-discovery/interview-spec.json",
+ "skills/cv-candidate-discovery/agents/openai.yaml",
  "release/RELEASE_MANIFEST.json","release/RELEASE_NOTES.md",
  "release/KNOWN_LIMITATIONS.md","release/QUALITY_GATES.md",
 ]
@@ -106,7 +123,7 @@ def main():
         ]:
             if RELEASE_VERSION not in read(rel):
                 fail(f"{rel} must mention release version {RELEASE_VERSION}",errors)
-        for component in ["document_structure_skill","consistency_standard","date_standard","application_targeting_skill","target_application_model","application_target_schema"]:
+        for component in ["document_structure_skill","consistency_standard","date_standard","application_targeting_skill","target_application_model","application_target_schema","candidate_discovery_skill","interview_session_schema","interview_sufficiency_engine"]:
             if not manifest.get("components",{}).get(component):
                 fail(f"manifest must declare {component}",errors)
     except Exception as exc:
@@ -168,6 +185,30 @@ def main():
                 fail(f"target-application schema missing {key}",errors)
     except Exception as exc:
         fail(f"application-targeting validation error: {exc}",errors)
+
+    # Candidate-discovery subsystem
+    try:
+        cds=json.loads(read("skills/cv-candidate-discovery/interview-spec.json"))
+        if cds.get("coverage_states")!=["UNSEEN","DISCOVERED","PARTIAL","CV_USABLE","TARGET_READY","BLOCKED"]:
+            fail("candidate discovery coverage-state drift",errors)
+        if cds.get("gap_priorities")!=["P0","P1","P2","P3"]:
+            fail("candidate discovery priority drift",errors)
+        if cds.get("default_max_followup_rounds_per_topic")!=2:
+            fail("candidate discovery default probe budget drift",errors)
+        cd_cases=json.loads(read("skills/cv-candidate-discovery/evaluation/cases.json"))
+        if len(cd_cases.get("cases",[]))<24:
+            fail("candidate-discovery skill needs >=24 adversarial cases",errors)
+        session_schema=json.loads(read("schemas/candidate-interview-session.schema.json"))
+        sprops=session_schema.get("properties",{})
+        for key in ["episodes","asked_intents","answered_intents","open_gaps","contradictions"]:
+            if key not in sprops:
+                fail(f"candidate interview session schema missing {key}",errors)
+        skill_text=read("skills/cv-candidate-discovery/SKILL.md")
+        for required_phrase in ["Never knowingly ask the same semantic intent twice","Target Delta","CV_USABLE"]:
+            if required_phrase not in skill_text:
+                fail(f"candidate discovery invariant missing: {required_phrase}",errors)
+    except Exception as exc:
+        fail(f"candidate-discovery validation error: {exc}",errors)
 
     # Target-application runtime validator self-test
     try:
