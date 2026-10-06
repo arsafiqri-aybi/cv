@@ -1,14 +1,14 @@
-# Candidate Evidence Model v1
+# Candidate Evidence Model v1.1
 
 ## Purpose
 
-Store candidate reality **before** CV wording.
+Store candidate reality before CV wording.
 
-The model prevents three common failures:
-
-1. wording silently changes facts;
-2. team outcomes are misattributed to the candidate;
-3. unavailable metrics are invented to make bullets look stronger.
+The model prevents:
+1. wording silently changing facts;
+2. team outcomes being misattributed;
+3. invented metrics;
+4. invented date precision.
 
 ## Canonical evidence unit
 
@@ -25,63 +25,63 @@ FACT
 → ALLOWED CLAIM STRENGTH
 ```
 
-Not every unit needs every field.
+## Date normalization
+
+Canonical normalized date fields accept:
+
+```text
+YYYY
+YYYY-MM
+YYYY-MM-DD
+null
+```
+
+For ongoing evidence:
+- `end_date = null`
+- `is_current = true`
+
+Do not store `Present`/`Sekarang` in normalized date fields.
+
+If source precision is lower than desired display precision, preserve the lower precision.
+
+Optional `date_source_text` may preserve the original wording.
+
+Display formatting belongs to the document layer:
+- `standards/DATE_STANDARD.md`
 
 ## Evidence rules
 
 ### R1 — Fact first
-
-A CV sentence must be reconstructible from one or more evidence records.
+A CV statement must be reconstructible from one or more evidence records.
 
 ### R2 — Contribution attribution
-
-Distinguish:
-- sole;
-- primary;
-- shared;
-- supporting;
-- unknown.
-
-Do not turn team output into sole ownership.
+Distinguish sole, primary, shared, supporting, and unknown ownership.
 
 ### R3 — Metrics
-
-A metric may be used only when:
-- supplied by the user or a source;
-- its meaning is understood;
-- attribution is not misleading.
-
-Never back-calculate or invent a metric merely because quantified bullets are fashionable.
+Use a metric only when supplied/supported and meaningfully attributable.
 
 ### R4 — Uncertainty
-
-When an evidence record is uncertain:
-- narrow the claim;
-- preserve ambiguity if material;
-- or omit it.
-
-Do not use stronger verbs to compensate for weak support.
+Narrow, omit, or preserve uncertainty. Do not compensate with stronger verbs.
 
 ### R5 — Verification status
-
-`verified` does not mean universally true; it means the available evidence has been checked against the referenced support.
+`verified` means checked against available referenced support, not universal certainty.
 
 ### R6 — Sensitive information
+Apply relevance, jurisdiction, privacy, and discrimination-risk review.
 
-Sensitive data should not be included merely because it exists in the candidate record.
+### R7 — Chronology
+Do not alter dates to hide gaps.
 
-The construction engine must apply:
-- relevance;
-- jurisdiction;
-- privacy;
-- discrimination-risk review.
+If date sources materially conflict:
+- emit `FACT_CONFLICT`;
+- resolve before finalization where material.
 
 ## Claim-strength map
 
-- `direct` — may be stated directly within evidence bounds.
-- `bounded` — may be stated with careful scope/attribution.
-- `descriptive_only` — include only as neutral fact if relevant.
-- `do_not_use` — exclude from CV generation.
+- `direct`
+- `bounded`
+- `descriptive_only`
+- `do_not_use`
 
 ## Non-equivalences
 
@@ -93,14 +93,11 @@ duration ≠ competence
 tool exposure ≠ mastery
 credential ≠ demonstrated performance
 metric ≠ evidence quality
+display precision ≠ factual precision
 ```
 
 ## Runtime requirement
 
 Before generating final CV copy, build or infer a candidate evidence inventory.
 
-If candidate facts are missing, do not fabricate. Produce:
-- a bounded draft with placeholders,
-- a request for missing evidence,
-- or an evidence-gap report,
-depending on the user's task.
+If facts are missing, do not fabricate them.

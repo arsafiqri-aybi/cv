@@ -1,56 +1,55 @@
-# CV Construction System v1
+# CV Construction System v1.1
 
 ## Principle
 
-The final document is a **representation layer**, not the evidence store.
+The final document is a representation layer, not the evidence store.
 
-## Section candidates
+Canonical structure/editorial authority:
+- `standards/CONSISTENCY_STANDARD.md`
+- `standards/DATE_STANDARD.md`
+- `skills/cv-document-structure/SKILL.md`
 
-Use only when useful:
-- Header / Contact
-- Professional Summary
-- Experience
-- Projects
-- Education
-- Skills
-- Certifications / Licenses
-- Publications / Research
-- Awards
-- Volunteering / Leadership
-- Selected Work / Portfolio Links
+## Canonical section IDs
 
-Do not add a section merely because templates usually contain it.
+Use:
+- `contact`
+- `summary`
+- `experience`
+- `projects`
+- `education`
+- `skills`
+- `certifications`
+- `publications_research`
+- `awards`
+- `leadership_volunteering`
+- `portfolio`
 
-## Summary
+Display labels are localized/presentation choices.
 
-A summary is optional.
+Do not add a section merely because a template usually contains it.
 
-Use when it improves:
-- positioning;
-- career-transition explanation;
-- senior-level synthesis;
-- role relevance.
+## Professional Summary
 
-Avoid:
-- generic adjectives;
-- unsupported superlatives;
-- personality claims inferred from nothing;
-- keyword piles.
+Optional.
 
-## Experience entries
+Use when it improves positioning, transition explanation, senior synthesis, or role relevance.
 
-Recommended information:
-- organization;
+Avoid generic adjectives, unsupported superlatives, personality claims, and keyword piles.
+
+## Experience
+
+Bind:
 - role;
-- dates;
-- location if relevant;
+- organization;
+- normalized dates;
+- location when relevant;
 - evidence-ranked bullets.
 
-### Bullet design
+Display dates through the canonical date standard.
 
-A bullet is not required to follow one fixed formula.
+## Bullets
 
-Useful components:
+Possible components:
 
 ```text
 CONTRIBUTION
@@ -61,55 +60,27 @@ CONTRIBUTION
 + SCOPE
 ```
 
-Select only components that improve relevance and clarity.
+Use only supported components.
 
-## Achievement vs responsibility
-
-Prefer diagnostically useful evidence, but do not falsely convert responsibilities into achievements.
-
-A responsibility can be valuable when:
-- it is directly relevant;
-- scope is meaningful;
-- outcomes are unavailable;
-- role context matters.
+Follow one dominant punctuation/editorial style per section.
 
 ## Skills
 
-Skills must be supported by at least one of:
-- experience evidence;
-- project evidence;
-- credential;
-- education;
-- verified work sample.
+Every material skill should be supportable by experience, project, credential, education, or verified artifact.
 
-Do not list tools solely because the target JD mentions them.
+Preserve official technology casing.
 
-## Education
+## Education / Projects / Certifications / Other sections
 
-Importance depends on:
-- career stage;
-- role;
-- credential constraints;
-- recency;
-- field relevance.
-
-Do not assume education always belongs near the top.
-
-## Projects
-
-Projects can substitute for missing formal experience when they provide relevant evidence.
-
-Distinguish:
-- personal;
-- academic;
-- freelance/client;
-- internal;
-- open-source;
-- team project.
+Use the same principles:
+- semantic grouping;
+- evidence relevance;
+- consistent metadata;
+- truthful chronology.
 
 ## Ordering
 
-Order by expected screening value under evidence constraints.
+Order by screening value under evidence constraints.
 
 Common defaults are not laws.
 
@@ -117,14 +88,14 @@ Common defaults are not laws.
 
 No universal one-page law.
 
-Choose length based on:
+Choose length by:
 - career stage;
 - relevance density;
 - role norms;
 - jurisdiction;
-- academic vs industry context.
+- academic/industry context.
 
-Cut low-value information before compressing high-value evidence beyond readability.
+Edit low-value content before shrinking typography.
 
 ## Visual system
 
@@ -133,43 +104,28 @@ Optimize:
 - hierarchy;
 - whitespace;
 - consistency;
-- stable PDF/text extraction.
-
-Avoid decorative complexity that:
-- obscures text;
-- breaks reading order;
-- damages parsing;
-- consumes high-value space.
+- stable text extraction.
 
 ## Links
 
-Use links when they provide meaningful proof:
-- portfolio;
-- GitHub;
-- publication;
-- case study;
-- product.
-
-Do not add dead, private, or irrelevant links.
+Use relevant live links with consistent labels.
 
 ## File output
 
-Preferred default for applications:
-- clean PDF generated from a stable source document.
+Preferred default:
+- clean, selectable-text PDF generated from a stable source.
 
-When machine compatibility is important:
-- retain selectable text;
-- avoid text embedded in images;
-- validate extraction order;
-- use standard section headings where appropriate.
+Validate:
+- reading order;
+- entity/date association;
+- link integrity;
+- editorial consistency.
 
-## Completion checklist
+## Completion
 
-- every material claim traceable;
-- top requirements represented where evidence exists;
-- unsupported claims removed;
-- chronology consistent;
-- headings understandable;
-- no accidental duplicate content;
-- no sensitive data without reason;
-- final file readable by human and parser.
+A final CV must pass:
+- factual integrity;
+- structural integrity;
+- editorial consistency;
+- human readability;
+- appropriate machine robustness.

@@ -1,8 +1,14 @@
-# PDF, Machine Parsing, and Reading Order v1.0
+# PDF, Machine Parsing, and Reading Order v1.1
 
 ## Core idea
 
 A visually correct CV can still be structurally broken.
+
+Use:
+- `CONSISTENCY_STANDARD.md`
+- `DATE_STANDARD.md`
+
+for editorial and date conventions.
 
 ## Semantic extraction targets
 
@@ -34,8 +40,9 @@ After export:
    - name/contact first;
    - section heading before section content;
    - role adjacent to employer/date;
+   - date belongs to the correct entry;
    - bullets remain under correct role;
-   - left/right columns do not interleave incorrectly;
+   - multi-column streams do not interleave incorrectly;
    - page 2 begins in intended sequence.
 
 ## Failure classes
@@ -58,6 +65,12 @@ Glyph/Unicode substitution damages meaning.
 ### P5 — Link corruption
 Visible URL/link is broken or points elsewhere.
 
+### P6 — Date corruption
+A date is missing, altered, or associated with the wrong entry.
+
+### P7 — Editorial drift
+Extracted content exposes inconsistent labels/date styles/technology names that were not intentional.
+
 ## PDF structural defaults
 
 Prefer:
@@ -65,12 +78,12 @@ Prefer:
 - embedded fonts;
 - logical content order;
 - standard Unicode;
-- consistent headings;
+- consistent H1 section semantics;
 - standard bullet characters;
 - real hyperlinks.
 
 Avoid:
-- scanned image-only resume;
+- scanned image-only CV;
 - rasterized text;
 - critical text in shapes;
 - overlapping text boxes;
@@ -78,7 +91,7 @@ Avoid:
 
 ## Tagged PDF
 
-Where toolchain supports it, tagged PDF with meaningful heading structure improves accessibility and makes reading order explicit.
+Where supported, tagged PDF with meaningful heading structure improves accessibility and makes reading order explicit.
 
 Do not claim tagged PDF guarantees ATS ranking.
 

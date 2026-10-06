@@ -1,4 +1,4 @@
-# Output Contract — CV Document Structure Skill
+# Output Contract — CV Document Structure Skill v1.1
 
 For a full document-structure task, produce:
 
@@ -10,46 +10,73 @@ For a full document-structure task, produce:
 - constraints.
 
 ## 2. Section architecture
-A selected ordered set of sections with a reason for each inclusion/order.
+Use canonical section IDs plus intended display labels.
 
 ## 3. Page architecture
 - target page count range;
-- single/two-column decision;
+- single-column/multi-column decision;
 - page-break strategy;
 - information-density strategy.
 
 ## 4. Hierarchy specification
-- H0 name;
+Use exact canonical IDs:
+- H0 candidate name;
 - H1 section heading;
 - H2 entry title;
-- metadata;
-- body/bullets;
-- links.
+- M1 organization/institution;
+- M2 dates/location/metadata;
+- B1 evidence bullet;
+- B2 supporting detail.
 
 ## 5. Entry templates
-At minimum:
+At minimum when applicable:
 - Experience;
-- Project;
+- Projects;
 - Education.
 
-## 6. Typography/layout spec
-Clearly label:
+## 6. Date and chronology specification
+State:
+- normalized internal precision;
+- output language/locale;
+- display date pattern;
+- ongoing-work token;
+- range separator;
+- chronology rule.
+
+Use `DATE_STANDARD.md`.
+
+## 7. Typography/layout specification
+Clearly distinguish:
 - research-backed principles;
 - engineering defaults.
 
-## 7. Machine/accessibility spec
+## 8. Machine/accessibility specification
 - extraction order;
 - section semantics;
 - PDF rules;
 - parser test requirements.
 
-## 8. QA gates
+## 9. Editorial consistency specification
+Check:
+- section naming;
+- date format;
+- location format;
+- technology casing;
+- metrics;
+- bullet grammar/punctuation;
+- link style.
+
+Use `CONSISTENCY_STANDARD.md`.
+
+## 10. QA gates
 - human scan;
 - text extraction;
-- association integrity;
+- reading order;
+- entity/date association;
 - PDF integrity;
+- editorial consistency;
 - factual integrity.
 
 ## Completion condition
 
-Do not mark complete until the final exported document has been checked, if the artifact exists.
+Do not mark complete until the final exported document has been checked when the artifact exists.

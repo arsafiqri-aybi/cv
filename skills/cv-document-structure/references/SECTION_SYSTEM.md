@@ -1,15 +1,20 @@
-# Section System v1.0
+# Section System v1.1
 
 ## Principle
 
 A CV section is a **semantic container for evidence**, not a decorative panel.
 
+Canonical internal section IDs are defined in:
+- `CONSISTENCY_STANDARD.md`
+- `../structure-spec.json`
+
+Display labels may be localized, but IDs remain stable.
+
 ## Inclusion decision
 
-For each candidate section calculate conceptually:
+For each candidate section reason conceptually about:
 
 ```text
-utility =
 role relevance
 × evidence strength
 × differentiation
@@ -21,7 +26,7 @@ role relevance
 
 Do not turn this into fake precise arithmetic.
 
-## Identity / Contact
+## `contact` — Header/contact block
 
 Purpose:
 - uniquely identify candidate;
@@ -38,9 +43,9 @@ Prefer:
 Avoid by default:
 - full street address;
 - irrelevant sensitive personal data;
-- decorative icon-only contact methods.
+- icon-only contact methods.
 
-## Summary / Profile
+## `summary` — Professional Summary
 
 Optional.
 
@@ -48,35 +53,27 @@ Include when it solves a real problem:
 - career transition;
 - senior-level synthesis;
 - multidisciplinary identity;
-- target role positioning.
+- target-role positioning.
 
 Exclude when it repeats obvious information.
 
-Structure:
-```text
-current professional identity
-+ strongest target-relevant evidence
-+ domain/scope
-+ optional differentiator
-```
-
-Do not use generic adjective stacks.
-
-## Experience
+## `experience` — Experience
 
 Usually the primary evidence container for experienced industry candidates.
 
 Entry order:
-- generally reverse chronological for auditability and familiarity;
+- generally reverse chronological for conventional industry applications;
 - deviations require a reason.
 
 Within each role:
 1. role + organization + dates;
-2. highest-relevance evidence first;
+2. highest-relevance evidence;
 3. supporting evidence;
-4. low-value routine duties only if diagnostically necessary.
+4. routine duties only when diagnostically necessary.
 
-## Projects
+Dates must follow `DATE_STANDARD.md`.
+
+## `projects` — Projects
 
 Use when projects carry material evidence.
 
@@ -89,25 +86,23 @@ Especially valuable for:
 
 Do not duplicate Experience bullets verbatim.
 
-## Education
+## `education` — Education
 
 Priority increases when:
 - early career;
 - credential is a hard constraint;
-- degree/field highly relevant;
-- academic achievement is a meaningful signal.
+- degree/field is highly relevant;
+- academic achievement is meaningful.
 
 Priority decreases when:
-- long professional record dominates;
+- a long professional record dominates;
 - education is old and weakly diagnostic.
 
-## Skills
+## `skills` — Skills
 
-Skills section is an index, not proof.
+Skills are an index, not proof.
 
-Every listed material skill should be supportable elsewhere or by a credential/artifact.
-
-Organize only if categories improve retrieval.
+Every material skill should be supportable elsewhere or by credential/artifact.
 
 Avoid:
 - proficiency bars;
@@ -115,45 +110,50 @@ Avoid:
 - arbitrary percentages;
 - unsupported keyword dumps.
 
-## Certifications / Licenses
+## `certifications` — Certifications
 
-Use when:
-- required;
-- strongly relevant;
-- externally verifiable.
+Use when required, strongly relevant, or externally verifiable.
 
 Include issuer and validity/expiry when material.
 
-## Awards
+## `publications_research` — Publications & Research
 
-Include when:
-- selective;
-- relevant;
-- understandable.
+Use structured bibliographic conventions for research-heavy candidates.
 
-Add context when the award name is obscure.
+For industry CVs, select highly relevant items unless a full academic CV is required.
 
-## Activities / Leadership / Volunteering
+## `awards` — Awards
 
-Include when it provides credible evidence not already represented.
+Include when selective, relevant, and understandable.
 
-Avoid assuming the organization's name is self-explanatory.
+Add context for obscure awards.
 
-## Publications / Research
+## `leadership_volunteering` — Leadership & Volunteering
 
-For research-heavy candidates, use structured bibliographic conventions.
+Include when it contributes credible evidence not already represented.
 
-For industry resumes, select only highly relevant publications unless user needs a full academic CV.
+Explain obscure organizations minimally when needed.
 
-## Optional section order decision matrix
+## `portfolio` — Selected Work
+
+Use for high-value external proof:
+- portfolio;
+- case study;
+- GitHub repository;
+- product;
+- publication.
+
+Do not use as a duplicate link dump.
+
+## Contextual order matrix
 
 | Candidate context | Usually high priority | Conditional | Usually lower |
 |---|---|---|---|
-| Experienced industry | Experience | Summary, Skills, Projects, Certs | Education |
-| Student | Education, Projects/Experience | Skills, Activities | Summary |
-| Career changer | Summary, transferable Projects/Evidence, Experience | Certs, Skills | unrelated detail |
-| Technical builder | Experience/Projects | Skills, GitHub/Portfolio | generic summary |
-| Regulated role | Licenses/Certifications, Experience | Education | optional extras |
+| Experienced industry | Experience | Professional Summary, Skills, Projects, Certifications | Education |
+| Student | Education, Projects/Experience | Skills, Leadership & Volunteering | Professional Summary |
+| Career changer | Professional Summary, transferable Projects/Evidence, Experience | Certifications, Skills | unrelated detail |
+| Technical builder | Experience/Projects | Skills, Selected Work | generic summary |
+| Regulated role | Certifications/Licenses, Experience | Education | optional extras |
 | Academic | Education, Research, Publications | Teaching, Awards, Service | industry-style summary |
 
 This is an engineering decision aid, not a universal empirical ranking.

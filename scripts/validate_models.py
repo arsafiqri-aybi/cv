@@ -1,27 +1,28 @@
 #!/usr/bin/env python3
-"""Lightweight structural validator for CV project JSON instances.
-
-This validator intentionally uses only the Python standard library.
-It performs project-specific checks; it is not a full JSON Schema engine.
-"""
+"""Lightweight structural validator for CV project JSON instances."""
 import json
+import re
 import sys
 from pathlib import Path
 
-ALLOWED_OWNERSHIP = {"sole","primary","shared","supporting","unknown"}
-ALLOWED_CONFIDENCE = {"high","medium","low"}
-ALLOWED_CLAIM = {"direct","bounded","descriptive_only","do_not_use"}
-ALLOWED_IMPORTANCE = {"critical","high","medium","low","unknown"}
+ALLOWED_OWNERSHIP={"sole","primary","shared","supporting","unknown"}
+ALLOWED_CONFIDENCE={"high","medium","low"}
+ALLOWED_CLAIM={"direct","bounded","descriptive_only","do_not_use"}
+ALLOWED_IMPORTANCE={"critical","high","medium","low","unknown"}
+DATE_RE=re.compile(r"^\d{4}(?:-\d{2}(?:-\d{2})?)?$")
 
 def load(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
+def valid_date(value):
+    return value is None or (isinstance(value,str) and DATE_RE.fullmatch(value))
+
 def validate_candidate(data):
     errors=[]
-    if not isinstance(data.get("candidate_id"), str) or not data["candidate_id"]:
+    if not isinstance(data.get("candidate_id"),str) or not data["candidate_id"]:
         errors.append("candidate_id must be a non-empty string")
     items=data.get("evidence_items")
-    if not isinstance(items, list):
+    if not isinstance(items,list):
         errors.append("evidence_items must be a list")
         return errors
     ids=set()
@@ -44,6 +45,13 @@ def validate_candidate(data):
             errors.append(f"{p}.confidence invalid")
         if item.get("allowed_claim_strength") not in ALLOWED_CLAIM:
             errors.append(f"{p}.allowed_claim_strength invalid")
+        for field in ("start_date","end_date"):
+            if not valid_date(item.get(field)):
+                errors.append(f"{p}.{field} must be YYYY, YYYY-MM, YYYY-MM-DD, or null")
+        if item.get("is_current") is True and item.get("end_date") is not None:
+            errors.append(f"{p}.end_date must be null when is_current=true")
+        if isinstance(item.get("end_date"),str) and item["end_date"].lower() in {"present","current","sekarang"}:
+            errors.append(f"{p}.end_date must be normalized; use null + is_current=true")
     return errors
 
 def validate_role(data):
@@ -76,7 +84,7 @@ def validate_role(data):
 
 def main():
     if len(sys.argv)!=3 or sys.argv[1] not in {"candidate","role"}:
-        print("usage: validate_models.py candidate|role FILE.json", file=sys.stderr)
+        print("usage: validate_models.py candidate|role FILE.json",file=sys.stderr)
         return 2
     data=load(sys.argv[2])
     errors=validate_candidate(data) if sys.argv[1]=="candidate" else validate_role(data)
@@ -87,5 +95,5 @@ def main():
     print("PASS")
     return 0
 
-if __name__ == "__main__":
+if __name__=="__main__":
     raise SystemExit(main())

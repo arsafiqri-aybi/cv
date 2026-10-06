@@ -1,72 +1,54 @@
-# CV v1.0.0 — Release Notes
+# CV v1.1.0 — Release Notes
 
 ## Release
 
-**PROJECT_COMPLETE_V1**
+**PROJECT_COMPLETE_V1 — 1.x release line**
 
-This release establishes a research-grounded operational system for constructing and auditing CVs from real candidate evidence and target-role requirements.
+v1.1.0 adds the CV Document Structure subsystem and a repository-wide consistency layer.
 
-## Core architecture
+## New in v1.1.0
 
-```text
-Role Reality
-↔ Candidate Reality
-→ Evidence
-→ Signaling
-→ Relevance
-→ Document Representation
-→ Human + Machine Interpretation
-→ Screening Outcome
-→ Feedback
-```
+- research-grounded `cv-document-structure` skill;
+- semantic section architecture;
+- page architecture;
+- typography/layout rules;
+- PDF reading-order and parser checks;
+- canonical section IDs;
+- canonical hierarchy IDs;
+- canonical date/chronology standard;
+- editorial consistency standard;
+- stricter candidate-date schema;
+- date-aware model validator;
+- document-structure adversarial evaluation expanded to 23 cases;
+- static audit extended to cross-file consistency.
 
-## What shipped
+## Canonical standards
 
-- Master Prompt
-- Scale execution contract
-- Governor policy
-- research/evidence policy
-- source, claim, contradiction, uncertainty registries
-- 77-construct taxonomy
-- 70-edge knowledge graph
-- 12 protected non-edges
-- candidate evidence schema
-- target role schema
-- evidence↔role mapping
-- claim-calibration engine
-- CV construction system
-- human screening audit
-- machine interpretation audit
-- factual integrity audit
-- fairness/privacy audit
-- 18 adversarial evaluation cases
-- 10-dimension evaluation rubric
-- static audit scripts
-- packaged root CV Skill
-- runtime references
-- known limitations
+- `standards/CONSISTENCY_STANDARD.md`
+- `standards/DATE_STANDARD.md`
 
-## Major scientific protections
+## Versioning rule
 
-The system explicitly protects:
+Repository release version is `1.1.0`.
 
-```text
-interview success ≠ job performance validity
-writing quality ≠ capability
-experience duration ≠ competence
-perceived fit ≠ objective fit
-parsing ≠ ranking
-keyword overlap ≠ competence
-quantification ≠ evidence quality
-visual polish ≠ universal effectiveness
-```
+Component research/taxonomy versions can remain `v1.0` when their scientific content has not changed. Component version and release version are not the same concept.
+
+## Protected non-rules
+
+The release still rejects universal claims such as:
+- exactly one page;
+- exactly two pages;
+- one fixed section order;
+- single-column only;
+- multi-column always fails ATS;
+- serif only;
+- sans-serif only.
 
 ## Non-claims
 
 This release does not claim:
 - scientific saturation;
 - universal ATS behavior;
-- a universal best template;
 - guaranteed callbacks;
-- independent recruiter validation;
-- universal legal/cultural applicability.
+- universal legal/cultural applicability;
+- independent recruiter validation.

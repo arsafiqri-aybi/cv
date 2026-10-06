@@ -1,4 +1,4 @@
-# Document Structure Decision Matrix v1.0
+# Document Structure Decision Matrix v1.1
 
 ## Decision D1 — One page or more?
 
@@ -33,7 +33,7 @@ NO if it:
 YES conditionally for:
 - technical career transition;
 - student with limited work history;
-- regulated/technical keyword retrieval when skills are supported.
+- regulated/technical retrieval needs when skills are supported.
 
 Otherwise Experience often carries stronger context.
 
@@ -49,49 +49,62 @@ NO when:
 
 ## Decision D5 — Projects?
 
-Promote Projects high when:
+Promote Projects when:
 - project evidence is more target-relevant than job titles;
 - candidate is transitioning;
 - portfolio/build evidence is central.
 
-## Decision D6 — One vs two columns?
+## Decision D6 — Single-column vs multi-column?
 
 Default:
-- single column when platform unknown.
+- single-column when platform is unknown.
 
-Two columns:
+Multi-column:
 - only when human-design benefit is meaningful and artifact extraction is verified.
+
+A two-column document is a specific multi-column case.
 
 ## Decision D7 — Creative visual system?
 
 Increase visual expressiveness only if:
 - occupation values design;
 - content remains readable;
-- machine pathway is known or separate ATS-safe version exists.
+- machine pathway is known or a separate robust submission version exists.
 
 ## Decision D8 — Dense skill inventory?
 
-Use compact skill index only for supported, target-relevant skills.
+Use a compact skill index only for supported, target-relevant skills.
 
 Avoid exhaustive tool dumping.
 
 ## Decision D9 — Dates
 
-Use a consistent, unambiguous format.
+Canonical authority:
+- `DATE_STANDARD.md`
 
-Engineering default:
-`MMM YYYY – MMM YYYY`
-or
-`YYYY – YYYY`
+Do not invent date precision.
 
-Locale/context may justify alternatives.
+Internal:
+- `YYYY`
+- `YYYY-MM`
+- `YYYY-MM-DD`
+
+English display default for month-precision career entries:
+- `MMM YYYY – MMM YYYY`
+- `MMM YYYY – Present`
+
+Year-only evidence:
+- `YYYY – YYYY`
+- `YYYY – Present`
+
+Use one language/locale and an en dash consistently.
 
 ## Decision D10 — Links
 
-Include only:
+Include only links that are:
 - alive;
 - relevant;
 - professional;
 - readable.
 
-Use visible label + actual hyperlink.
+Use a visible label plus the actual hyperlink.

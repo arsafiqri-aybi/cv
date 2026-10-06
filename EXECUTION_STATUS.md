@@ -4,88 +4,59 @@ Last updated: 2026-10-06
 
 ## Release state
 
-**PROJECT_COMPLETE_V1 — operational architecture and runtime package complete.**
+**v1.1.0 — PROJECT_COMPLETE_V1 release line**
 
-Scientific saturation is **NOT_CLAIMED**.
+Scientific saturation: **NOT_CLAIMED**  
+Independent external/human behavioral evaluation: **NOT_CLAIMED**
 
-Independent external/human behavioral evaluation is **NOT_CLAIMED**.
+## Core system
 
-## Stage status
+S0–S12 root CV architecture: COMPLETE for v1 release line.
 
-- S0 — Contract + red-team foundation: COMPLETE
-- S1 — Literature discovery breadth pass: COMPLETE v0.1
-- S2 — Claim / contradiction / uncertainty registries: COMPLETE for v1 scope
-- S3 — Construct decomposition: COMPLETE v1
-- S4 — Knowledge graph: COMPLETE v1
-- S5 — Candidate evidence model: COMPLETE v1
-- S6 — Target role model: COMPLETE v1
-- S7 — Reasoning engine: COMPLETE v1
-- S8 — CV construction system: COMPLETE v1
-- S9 — Human + machine + integrity + fairness audits: COMPLETE v1
-- S10 — Evaluation architecture: COMPLETE v1
-- S11 — Runtime Skill packaging: COMPLETE v1
-- S12 — Release / completion audit: COMPLETE v1
+## v1.1.0 Document Structure subsystem
 
-## Verified release snapshot
+- research base: COMPLETE v1 snapshot
+- section architecture: COMPLETE
+- page architecture: COMPLETE
+- typography/layout specification: COMPLETE
+- PDF/machine structure: COMPLETE
+- document-structure runtime Skill: COMPLETE
+- document-structure adversarial cases: 23
+- canonical consistency standard: COMPLETE
+- canonical date standard: COMPLETE
+- candidate date schema alignment: COMPLETE
+- validator alignment: COMPLETE
 
-- 77 graph nodes
-- 70 typed graph edges
-- 12 protected non-edges
-- 18 adversarial evaluation cases
-- 10 evaluation dimensions
+## Canonical consistency sources
 
-Static repository audit: **PASS**
+- `standards/CONSISTENCY_STANDARD.md`
+- `standards/DATE_STANDARD.md`
 
-Critical gates:
-- unique node IDs: PASS
-- edge referential integrity: PASS
-- non-edge referential integrity: PASS
-- factual fidelity: PASS
-- claim calibration: PASS
-- fairness/privacy: PASS
-- consistency: PASS
+## Automated validation
 
-## GitHub Actions validation
-
-Workflow installed:
-
+Workflow:
 `.github/workflows/validate.yml`
 
-Triggers:
-- push to `main`
+Runs on:
+- push to main
 - pull requests
 
-First workflow run:
-- workflow: Validate CV System
-- run ID: 37392045537
-- job: static-audit
-- job ID: 112039162963
-- result: **SUCCESS**
+The latest verified workflow before this consistency patch was run `37396170619`, conclusion **SUCCESS**.
 
-The workflow compiles:
-- `scripts/audit_repository.py`
-- `scripts/validate_models.py`
+This commit triggers a new validation run.
 
-and runs:
-- `python scripts/audit_repository.py`
+## Important version distinction
+
+Repository release:
+- `1.1.0`
+
+Component artifacts may retain their own version when scientific content has not changed.
+
+Example:
+- Document Structure research snapshot may remain v1.0 while the repository release is v1.1.0.
 
 ## Completion meaning
 
-PROJECT_COMPLETE_V1 means the system is architecturally and operationally ready to:
-- analyze target roles;
-- structure candidate evidence;
-- map evidence to requirements;
-- calibrate claims;
-- construct CV content;
-- audit human readability;
-- audit machine parseability assumptions;
-- audit factual integrity;
-- review fairness/privacy risks;
-- validate repository integrity automatically on GitHub.
+The system is operationally ready for evidence-grounded CV construction and structurally consistent document generation/audit.
 
-It does **not** mean:
-- every CV question is scientifically settled;
-- the system guarantees interviews/offers;
-- every ATS has been tested;
-- all cultures/jurisdictions are covered;
-- independent recruiter validation has been completed.
+It does not guarantee recruiter decisions or universal ATS behavior.

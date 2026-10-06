@@ -1,5 +1,52 @@
 {
-  "version": "1.0",
+  "version": "1.1",
+  "release_compatibility": "1.1.0",
+  "canonical_sections": [
+    {
+      "id": "contact",
+      "default_label": null
+    },
+    {
+      "id": "summary",
+      "default_label": "Professional Summary"
+    },
+    {
+      "id": "experience",
+      "default_label": "Experience"
+    },
+    {
+      "id": "projects",
+      "default_label": "Projects"
+    },
+    {
+      "id": "education",
+      "default_label": "Education"
+    },
+    {
+      "id": "skills",
+      "default_label": "Skills"
+    },
+    {
+      "id": "certifications",
+      "default_label": "Certifications"
+    },
+    {
+      "id": "publications_research",
+      "default_label": "Publications & Research"
+    },
+    {
+      "id": "awards",
+      "default_label": "Awards"
+    },
+    {
+      "id": "leadership_volunteering",
+      "default_label": "Leadership & Volunteering"
+    },
+    {
+      "id": "portfolio",
+      "default_label": "Selected Work"
+    }
+  ],
   "hierarchy_levels": [
     {
       "id": "H0",
@@ -31,15 +78,30 @@
     }
   ],
   "semantic_invariants": [
+    "section IDs remain stable even when display labels are localized",
     "section names reflect content",
     "role organization dates remain associated",
     "bullets remain associated with their entry",
     "critical contact data is recoverable as text",
     "reading order remains meaningful",
-    "page breaks preserve semantic chunks"
+    "page breaks preserve semantic chunks",
+    "date precision is never invented for visual consistency"
   ],
+  "date_standard": {
+    "internal_formats": [
+      "YYYY",
+      "YYYY-MM",
+      "YYYY-MM-DD",
+      null
+    ],
+    "ongoing_representation": "end_date=null and is_current=true",
+    "english_month_display": "MMM YYYY – MMM YYYY",
+    "english_current_display": "MMM YYYY – Present",
+    "range_separator": "en_dash",
+    "source_of_truth": "references/DATE_STANDARD.md"
+  },
   "defaults": {
-    "page_layout": "single_column_when_submission_platform_unknown",
+    "page_layout": "single-column when submission platform is unknown",
     "body_size_pt_range": [
       10.5,
       12
@@ -48,10 +110,11 @@
       1.15,
       1.35
     ],
-    "margin_in_range": [
+    "margin_inch_range": [
       0.55,
       0.85
     ],
+    "page_size": "context-dependent: A4 or Letter",
     "note": "Engineering defaults, not universal scientific constants."
   },
   "required_artifact_tests": [
@@ -59,7 +122,9 @@
     "text_extraction",
     "reading_order",
     "entity_association",
+    "date_association",
     "link_integrity",
-    "clipping_overflow"
+    "clipping_overflow",
+    "editorial_consistency"
   ]
 }

@@ -1,36 +1,29 @@
 {
   "project": "cv",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "release_line": "1.x",
   "release_status": "PROJECT_COMPLETE_V1",
   "release_date": "2026-10-06",
   "scientific_saturation_claimed": false,
   "independent_behavioral_evaluation_claimed": false,
   "static_release_audit": {
-    "status": "PASS",
+    "status": "PASS_AT_PREVIOUS_RELEASE; REVALIDATED_BY_GITHUB_ACTIONS_ON_EACH_PUSH",
     "nodes": 77,
     "edges": 70,
     "non_edges": 12,
-    "adversarial_cases": 18,
-    "rubric_dimensions": 10,
-    "checks": [
-      "unique node IDs",
-      "edge referential integrity",
-      "non-edge referential integrity",
-      "declared count consistency",
-      "critical factual_fidelity",
-      "critical claim_calibration",
-      "critical fairness_privacy",
-      "critical consistency",
-      "scientific saturation false"
-    ]
+    "root_adversarial_cases": 18,
+    "document_structure_adversarial_cases": 23,
+    "rubric_dimensions": 10
   },
   "github_actions": {
     "status": "INSTALLED_AND_PASSING",
     "workflow": ".github/workflows/validate.yml",
     "workflow_name": "Validate CV System",
-    "first_run_id": 37392045537,
-    "first_job_id": 112039162963,
-    "first_job_conclusion": "success",
+    "latest_verified_before_1_1_consistency_patch": {
+      "run_id": 37396170619,
+      "job_id": 112052538773,
+      "conclusion": "success"
+    },
     "triggers": [
       "push to main",
       "pull_request"
@@ -45,6 +38,9 @@
     "target_role_model": true,
     "reasoning_engine": true,
     "construction_system": true,
+    "document_structure_skill": true,
+    "consistency_standard": true,
+    "date_standard": true,
     "human_audit": true,
     "machine_audit": true,
     "factual_integrity_audit": true,
@@ -54,5 +50,7 @@
     "release_controls": true,
     "github_actions_validation": true
   },
+  "canonical_consistency_source": "standards/CONSISTENCY_STANDARD.md",
+  "canonical_date_source": "standards/DATE_STANDARD.md",
   "limitations_file": "release/KNOWN_LIMITATIONS.md"
 }

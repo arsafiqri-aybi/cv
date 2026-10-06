@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "cases": [
     {
       "id": "DS01",
@@ -51,7 +51,7 @@
       "name": "Creative designer",
       "must": [
         "allow expressive hierarchy",
-        "protect machine-safe pathway",
+        "protect robust machine pathway",
         "retain semantic headings"
       ]
     },
@@ -92,7 +92,7 @@
       "name": "Serif vs sans-serif request",
       "must": [
         "reject universal superiority claim",
-        "optimize legibility/embedding/context"
+        "optimize legibility embedding context"
       ]
     },
     {
@@ -107,7 +107,7 @@
       "id": "DS13",
       "name": "Role entry split across pages",
       "must": [
-        "keep title/date with content",
+        "keep title date with content",
         "repair page break"
       ]
     },
@@ -133,6 +133,63 @@
       "must": [
         "add minimal explanatory context if useful",
         "avoid assuming recruiter familiarity"
+      ]
+    },
+    {
+      "id": "DS17",
+      "name": "Mixed date styles",
+      "must": [
+        "normalize display style",
+        "use en dash",
+        "preserve factual precision"
+      ]
+    },
+    {
+      "id": "DS18",
+      "name": "Ongoing role stored as Present",
+      "must": [
+        "normalize end_date to null",
+        "set is_current true",
+        "render Present only at display layer"
+      ]
+    },
+    {
+      "id": "DS19",
+      "name": "Only year known but template wants month",
+      "must": [
+        "do not invent month",
+        "allow honest year-only precision"
+      ]
+    },
+    {
+      "id": "DS20",
+      "name": "Same section uses multiple labels",
+      "must": [
+        "use one canonical section ID",
+        "use one display label per CV"
+      ]
+    },
+    {
+      "id": "DS21",
+      "name": "Mixed bullet punctuation and tense",
+      "must": [
+        "normalize editorial style",
+        "preserve semantic tense differences"
+      ]
+    },
+    {
+      "id": "DS22",
+      "name": "Technology casing drift",
+      "must": [
+        "use official product casing consistently"
+      ]
+    },
+    {
+      "id": "DS23",
+      "name": "Mixed location formats",
+      "must": [
+        "choose consistent location pattern where evidence allows",
+        "do not invent missing geography"
       ]
     }
   ]
